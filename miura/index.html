@@ -5,8 +5,63 @@
 		<title>miura</title>
 		<script src="https://cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
+
+	<script>
+		AFRAME.registerComponent('photo-mode', {
+			init: function() {
+				const container = document.getElementById('photoModeContainer')
+				const image = document.getElementById('photoModeImage')
+				const shutterButton = document.getElementById('shutterButton')
+				const closeButton = document.getElementById('closeButton')
+
+				// Container starts hidden so it isn't visible when the page is still loading
+				container.style.display = 'block'
+
+				closeButton.addEventListener('click', () => {
+					container.classList.remove('photo')
+				})
+
+				shutterButton.addEventListener('click', () => {
+					// Emit a screenshotrequest to the xrweb component
+					this.el.sceneEl.emit('screenshotrequest')
+
+					// Show the flash while the image is being taken
+					container.classList.add('flash')
+				})
+
+				this.el.sceneEl.addEventListener('screenshotready', e => {
+					// Hide the flash
+					container.classList.remove('flash')
+
+					// If an error occurs while trying to take the screenshot, e.detail will be empty.
+					// We could either retry or return control to the user
+					if (!e.detail) {
+						return
+					}
+
+					// e.detail is the base64 representation of the JPEG screenshot
+					image.src = 'data:image/jpeg;base64,' + e.detail
+
+					var a = document.createElement('a');
+					a.href = image.src;
+					a.download = "download.jpg";
+					a.click();
+
+					// Show the photo
+					container.classList.add('photo')
+				})
+			}
+		})
+	</script>
+	<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
+		<div id="photoModeContainer" style="display: none">
+			<img id="photoModeImage">
+			<div id="flash"></div>
+			<div id="shutterButton" style=""></div>
+			<div id="closeButton" style=""></div>
+		</div>
 		<a-scene xrweb>
 			<a-assets>
 				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/4cH5n4155YD -->
@@ -16,16 +71,16 @@
 			<a-camera position="0 4 10"></a-camera>
 
 			<a-box position="0 1.6 0"
-			       animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; loop: true">
+                               animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; loop: true">
 			</a-box>
 
 			<a-text value="Hello, World!" color="black"
-				animation="property: position; from: 0 0 0; to: 5 0 0; dur: 1500; easing: linear; dir: alternate; loop: true"
-				animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 1500; easing: linear; dir: alternate; loop: true">
+			        animation="property: position; from: 0 0 0; to: 5 0 0; dur: 1500; easing: linear; dir: alternate; loop: true"
+                                animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 1500; easing: linear; dir: alternate; loop: true">
 			</a-text>
 
 			<a-gltf-model src="#kabocha"
-			          animation="property: position; from: 0 3 0; to: 5 3 0; dur: 1500; easing: linear; dir: alternate; loop: true">
+		                      animation="property: position; from: 0 3 0; to: 5 3 0; dur: 1500; easing: linear; dir: alternate; loop: true">
 			</a-gltf-model>
 
 		</a-scene>
