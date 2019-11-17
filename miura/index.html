@@ -12,15 +12,24 @@
 				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/4cH5n4155YD -->
 				<a-asset-item id="kabocha" src="model/kabocha.glb"></a-asset-item>
 			</a-assets>
+
 			<a-camera position="0 4 10"></a-camera>
+
+			<a-box position="0 1.6 0"
+			       animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear">
+			</a-box>
+
 			<a-entity gltf-model="#kabocha"
 	                          scale="300 300 300"
 			          position="0 2 0"
 			          animation=="property: position; to: 5 2 0; dur: 2000; easing: linear">
 			</a-entity>
 
-			<a-box position="0 1.6 0"
-			       animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear"></a-box>
+			<a-gltf-model src="#kabocha"
+	                          scale="300 300 300"
+			          position="0 5 0"
+			          animation=="property: position; to: 5 5 0; dur: 2000; easing: linear">
+			</a-gltf-model>
 
 		</a-scene>
 	</body>
