@@ -8,15 +8,12 @@
 	</head>
 	<body>
 		<a-scene xrweb>
-			<a-camera position="0 5 5"></a-camera>
-			<a-gltf-model src="./model/kabocha.glb" shadow></a-gltf-model>
-
-			<a-text value='"'></a-text>
-			<a-link href="https://poly.google.com/view/4cH5n4155YD" title="kabocha"></a-link>
-			<a-text value='" by '></a-text>
-			<a-link href="https://poly.google.com/user/cyypmbztDpj" title="sugamo"></a-link>
-			<a-text value=' is licensed under '></a-text>
-			<a-link href="https://creativecommons.org/licenses/by/3.0/legalcode" title="CC BY 3.0"></a-link>
+			<a-assets>
+				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/4cH5n4155YD -->
+				<a-asset-item id="kabocha" src="model/kabocha.glb"></a-asset-item>
+			</a-assets>
+			<a-camera position="0 4 10"></a-camera>
+			<a-entity gltf-model="#kabocha" scale="300 300 300" position="0 7 0"></a-entity>
 		</a-scene>
 	</body>
 </html>
