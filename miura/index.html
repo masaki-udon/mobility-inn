@@ -13,7 +13,15 @@
 				<a-asset-item id="kabocha" src="model/kabocha.glb"></a-asset-item>
 			</a-assets>
 			<a-camera position="0 4 10"></a-camera>
-			<a-entity gltf-model="#kabocha" scale="300 300 300" position="0 7 0"></a-entity>
+			<a-entity gltf-model="#kabocha" scale="300 300 300" position="0 7 0">
+				<a-animation
+					attribute="position"
+					to="0 4 -3"
+					direction="alternate"
+					dur="2000"
+					repeat="indefinite">
+				</a-animation>
+			</a-entity>
 		</a-scene>
 	</body>
 </html>
