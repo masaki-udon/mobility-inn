@@ -9,38 +9,38 @@
 	<script>
 		AFRAME.registerComponent('photo-mode', {
 			init: function() {
-				const container = document.getElementById('photoModeContainer')
-				const image = document.getElementById('photoModeImage')
-				const shutterButton = document.getElementById('shutterButton')
-				const closeButton = document.getElementById('closeButton')
+				const container = document.getElementById('photoModeContainer');
+				const image = document.getElementById('photoModeImage');
+				const shutterButton = document.getElementById('shutterButton');
+				const closeButton = document.getElementById('closeButton');
 
 				// Container starts hidden so it isn't visible when the page is still loading
-				container.style.display = 'block'
+				container.style.display = 'block';
 
 				closeButton.addEventListener('click', () => {
-					container.classList.remove('photo')
+					container.classList.remove('photo');
 				})
 
 				shutterButton.addEventListener('click', () => {
 					// Emit a screenshotrequest to the xrweb component
-					this.el.sceneEl.emit('screenshotrequest')
+					this.el.sceneEl.emit('screenshotrequest');
 
 					// Show the flash while the image is being taken
-					container.classList.add('flash')
+					container.classList.add('flash');
 				})
 
 				this.el.sceneEl.addEventListener('screenshotready', e => {
 					// Hide the flash
-					container.classList.remove('flash')
+					container.classList.remove('flash');
 
 					// If an error occurs while trying to take the screenshot, e.detail will be empty.
 					// We could either retry or return control to the user
 					if (!e.detail) {
-						return
+						return;
 					}
 
 					// e.detail is the base64 representation of the JPEG screenshot
-					image.src = 'data:image/jpeg;base64,' + e.detail
+					image.src = 'data:image/jpeg;base64,' + e.detail;
 
 					var a = document.createElement('a');
 					a.href = image.src;
@@ -48,7 +48,7 @@
 					a.click();
 
 					// Show the photo
-					container.classList.add('photo')
+					container.classList.add('photo');
 				})
 			}
 		})
@@ -62,7 +62,8 @@
 			<div id="shutterButton" style=""></div>
 			<div id="closeButton" style=""></div>
 		</div>
-		<a-scene xrweb>
+		<a-scene xrweb
+			photo-mode>
 			<a-assets>
 				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/4cH5n4155YD -->
 				<a-asset-item id="kabocha" src="model/kabocha.glb"></a-asset-item>
