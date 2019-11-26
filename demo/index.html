@@ -67,6 +67,7 @@
 			<a-assets>
 				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/4cH5n4155YD -->
 				<a-asset-item id="kabocha" src="model/kabocha.glb"></a-asset-item>
+				<a-asset-item id="tower1" src="model/tower1.glb"></a-asset-item>
 			</a-assets>
 
 			<a-camera position="0 4 10"></a-camera>
@@ -78,6 +79,9 @@
 
 			<a-gltf-model src="#kabocha"
 		                      animation="property: position; from: 0 3 0; to: 5 3 0; dur: 1500; easing: linear; dir: alternate; loop: true">
+			</a-gltf-model>
+
+			<a-gltf-model src="#tower1" position="6 6 6">
 			</a-gltf-model>
 
 		</a-scene>
