@@ -87,13 +87,14 @@
 				animation="property: components.material.material.opacity; from: 0; to: 1; dir: alternate; dur: 1000; loop: true">
 			</a-entity>
 
-			<a-gltf-model src="#kabocha" transparent="true"
+			<a-gltf-model src="#kabocha"
+				      material="transparent: true"
 		                      animation="property: position; from: 0 3 0; to: 5 3 0; dur: 1500; easing: linear; dir: alternate; loop: true"
-                                      animation__2="property: opacity; from: 0; to: 1; dur: 4000; easing: linear; dir: alternate; loop: true">
+                                      animation__2="property: components.material.material.opacity; from: 0; to: 1; dur: 4000; easing: linear; dir: alternate; loop: true">
 			</a-gltf-model>
 
 			<a-gltf-model src="#tower1" position="4 4 4" scale="0.003 0.003 0.003"
-						animation="property: visible; from: true; to: false; dur: 10000; delay: 2000;">
+						animation="property: visible; from: true; to: false; dur: 10000; dir: normal;">
 			</a-gltf-model>
 
 		</a-scene>
