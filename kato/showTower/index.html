@@ -39,7 +39,9 @@
       cursor="fuse: false; rayOrigin: mouse;">
       </a-camera>
 
-      <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
+      <a-light type="directional" intensity="0.5"
+        animation="property: position; from: 1 1 6; to: 10 10 0; dur: 1500; easing: linear; dir: alternate; loop: true">
+      </a-light>
 
       <a-light type="ambient" intensity="1"></a-light>
       
