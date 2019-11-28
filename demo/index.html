@@ -69,7 +69,11 @@
 			<a-assets>
 				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/4cH5n4155YD -->
 				<a-asset-item id="kabocha" src="model/kabocha.glb"></a-asset-item>
-				<a-asset-item id="tower1" src="model/tower1.glb"></a-asset-item>
+				<a-asset-item id="tower1" src="model/tower_01.glb"></a-asset-item>
+				<a-asset-item id="tower2" src="model/tower_02.glb"></a-asset-item>
+				<a-asset-item id="tower3" src="model/tower_03.glb"></a-asset-item>
+				<a-asset-item id="tower4" src="model/tower_04.glb"></a-asset-item>
+				<a-asset-item id="tower5" src="model/tower_05.glb"></a-asset-item>
 			</a-assets>
 
 			<a-camera position="0 4 10"></a-camera>
@@ -81,18 +85,25 @@
 			</a-text>
 
 			<a-gltf-model src="#kabocha"
-				      material="transparent: true"
-		                      animation="property: position; from: 0 3 0; to: 5 3 0; dur: 1500; easing: linear; dir: alternate; loop: true"
-				      animation__2="property: components.material.material.opacity; from: 0; to: 1; dir: alternate; dur: 1000; loop: true">
+	                    animation="property: position; from: 0 3 0; to: 5 3 0; dur: 1500; easing: linear; dir: alternate; loop: true">
 			</a-gltf-model>
 
-			<a-gltf-model src="#tower1" position="4 4 4" scale="0.003 0.003 0.003"
-						animation="property: visible; from: false; to: true; dur: 10000; dir: normal;">
+			<a-gltf-model src="#tower1" position="3 3 3" scale="0.003 0.003 0.003"
+						animation="property: visible; from: false; to: true; dur: 1000; dir: normal;">
+			</a-gltf-model>
+			<a-gltf-model src="#tower2" position="3 3 3" scale="0.003 0.003 0.003"
+						animation="property: visible; from: false; to: true; dur: 2000; dir: normal;">
+			</a-gltf-model>
+			<a-gltf-model src="#tower3" position="3 3 3" scale="0.003 0.003 0.003"
+						animation="property: visible; from: false; to: true; dur: 3000; dir: normal;">
+			</a-gltf-model>
+			<a-gltf-model src="#tower4" position="3 3 3" scale="0.003 0.003 0.003"
+						animation="property: visible; from: false; to: true; dur: 4000; dir: normal;">
+			</a-gltf-model>
+			<a-gltf-model src="#tower5" position="3 3 3" scale="0.003 0.003 0.003"
+						animation="property: visible; from: false; to: true; dur: 5000; dir: normal;">
 			</a-gltf-model>
 
-			<a-gltf-model src="#tower1" position="-4 -4 -4" scale="0.003 0.003 0.003" visible="false"
-						animation="property: visible; to: true; delay: 10000;">
-			</a-gltf-model>
 
 		</a-scene>
 	</body>
