@@ -17,7 +17,8 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
-			AFRAME.registerComponent('targetTower', {
+			//AFRAME.registerComponent('targetTower', {
+			AFRAME.registerComponent('target_Tower', {
 			    schema: {
 			        name: { type: 'string' }
 			    },
@@ -95,11 +96,11 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
 
-      			<a-entity xrextras-named-image-target="name: targetTower">
+      			<a-entity xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"
-				      visible="true">
+				      visible="false">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
