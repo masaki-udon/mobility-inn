@@ -17,7 +17,6 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
-			//AFRAME.registerComponent('targetTower', {
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
@@ -25,6 +24,7 @@
 			    init: function() {
 				    console.log("load")
 				    const showImage = ({detail}) => {
+					    document.querySelector('#target_Tower').emit('markerfound');
 					    document.querySelector('#tower_2').emit('markerfound');
 					    document.querySelector('#tower_2_1').emit('markerfound');
 					    document.querySelector('#tower_3').emit('markerfound');
@@ -32,6 +32,7 @@
 					    document.querySelector('#tower_5').emit('markerfound');
 				    }
 				    const hideImage = ({detail}) => {
+					    document.querySelector('#target_Tower').emit('lostfound');
 					    document.querySelector('#tower_2').emit('lostfound');
 					    document.querySelector('#tower_2_1').emit('lostfound');
 					    document.querySelector('#tower_3').emit('lostfound');
