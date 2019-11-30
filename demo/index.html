@@ -110,17 +110,16 @@
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
 		  	    	      xrextras-one-finger-rotate
-			              scale="0.01 0.01 0.01">
-				    <a-animation attribute="visible" to="true" delay="500" begin="markerfound"></a-animation>
-				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
+			              scale="0.01 0.01 0.01"
+ 		                      animation="property: visible; to: true; delay: 500; begin: markerfound;"
+				      animation__2="property: visible; to: false; begin: lostfound;">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2_1"
 		                      id="tower_2_1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-				  visible="false">
-				    <a-animation attribute="visible" to="true" delay="1000" begin="markerfound"></a-animation>
-				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
+ 		                      animation="property: visible; to: true; delay: 1000; begin: markerfound;"
+				      animation__2="property: visible; to: false; begin: lostfound;">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower3"
 		                      id="tower_3"
