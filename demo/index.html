@@ -94,8 +94,8 @@
 				cursor="fuse: false; rayOrigin: mouse;">
 			</a-camera>
 
-      			<a-light type="directional" intensity="0.5"
-			        animation="property: position; from: -5 -5 5; to: 5 5 5; dur: 2000; easing: linear; dir: alternate; loop: true">
+			<a-light type="directional" intensity="0.5">
+				<a-animation attribute="position" from="-5 -5 5" to="5 5 5" dur="2000" easing="linear" dir="alternate" loop="true">
       			</a-light>
 
       			<a-light type="ambient" intensity="1"></a-light>
@@ -164,7 +164,9 @@
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="500" ></a-animation>
 				    <a-animation attribute="visible" to="true" delay="3500" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <!--
 			    <a-gltf-model src="#tower9"
