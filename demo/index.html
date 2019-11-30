@@ -39,24 +39,24 @@
 				    const showImage = ({detail}) => {
 					    document.querySelector('#box').emit('hoge');
 
-					    document.querySelector('#target_Tower').emit('markerfound');
-					    document.querySelector('#tower_2').emit('markerfound');
-					    document.querySelector('#tower_2_1').emit('markerfound');
-					    document.querySelector('#tower_3').emit('markerfound');
-					    document.querySelector('#tower_4').emit('markerfound');
-					    document.querySelector('#tower_5').emit('markerfound');
+					    //document.querySelector('#target_Tower').emit('markerfound');
+					    //document.querySelector('#tower_2').emit('markerfound');
+					    //document.querySelector('#tower_2_1').emit('markerfound');
+					    //document.querySelector('#tower_3').emit('markerfound');
+					    //document.querySelector('#tower_4').emit('markerfound');
+					    //document.querySelector('#tower_5').emit('markerfound');
 
 					    document.querySelector('#tower_8').setAttribute("visible", "true")
 				    }
 				    const hideImage = ({detail}) => {
 					    document.querySelector('#box').emit('fuga');
 
-					    document.querySelector('#target_Tower').emit('lostfound');
-					    document.querySelector('#tower_2').emit('lostfound');
-					    document.querySelector('#tower_2_1').emit('lostfound');
-					    document.querySelector('#tower_3').emit('lostfound');
-					    document.querySelector('#tower_4').emit('lostfound');
-					    document.querySelector('#tower_5').emit('lostfound');
+					    //document.querySelector('#target_Tower').emit('lostfound');
+					    //document.querySelector('#tower_2').emit('lostfound');
+					    //document.querySelector('#tower_2_1').emit('lostfound');
+					    //document.querySelector('#tower_3').emit('lostfound');
+					    //document.querySelector('#tower_4').emit('lostfound');
+					    //document.querySelector('#tower_5').emit('lostfound');
 
 					    document.querySelector('#tower_8').setAttribute("visible", "false")
 				    }
@@ -104,8 +104,8 @@
 				<a-asset-item id="tower25" src="model/H26.glb"></a-asset-item>
 				<a-asset-item id="tower26" src="model/H27.glb"></a-asset-item>
 				<a-asset-item id="tower27" src="model/H28.glb"></a-asset-item>
-				-->
 				<a-asset-item id="tower28" src="model/H29.glb"></a-asset-item>
+				-->
 				<a-asset-item id="tower29" src="model/Building.glb"></a-asset-item>
 			</a-assets>
 
@@ -130,18 +130,21 @@
 			              src="#tower29"
 		 		      id="tt"
 		  	    	      xrextras-one-finger-rotate
-		                      scale="0.01 0.01 0.01">
-			    </a-gltf-model>
+ 		                      animation="property: scale; from: 1 1 1; to: 0.001 0.001 0.001; dur: 2000; easing: linear; begin: markerfound;"
+				      animation__2="property: visible; to: false; begin: lostfound;">
+			</a-gltf-model>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
-				     scale="0.01 0.01 0.01">
+				     scale="0.01 0.01 0.01"
+				     visible="true">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
 		  	    	      xrextras-one-finger-rotate
 			              scale="0.01 0.01 0.01"
+				     visible="false"
  		                      animation="property: visible; to: true; delay: 500; begin: markerfound;"
 				      animation__2="property: visible; to: false; begin: lostfound;">
 			    </a-gltf-model>
@@ -149,6 +152,7 @@
 		                      id="tower_2_1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
+				     visible="false"
  		                      animation="property: visible; to: true; delay: 1000; begin: markerfound;"
 				      animation__2="property: visible; to: false; begin: lostfound;">
 			    </a-gltf-model>
@@ -195,7 +199,6 @@
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 	  visible="false">
-				    <a-animation attribute="visible" to="true" delay="500" ></a-animation>
 				    <a-animation attribute="visible" to="true" delay="3500" begin="markerfound"></a-animation>
 				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
