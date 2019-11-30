@@ -47,8 +47,8 @@
 					    //document.querySelector('#tower_5').emit('lostfound');
 					    //document.querySelector('#tower_5').emit('markerfound');
 
-					    document.querySelector('#tower_1').setAttribute("visible", "true")
-					    document.querySelector('#tt').setAttribute("visible", true)
+					    document.querySelector('#tower_1').setAttribute("visible", "false")
+					    document.querySelector('#tt').setAttribute("visible", "true")
 				    }
 				    const hideImage = ({detail}) => {
 					    //document.querySelector('#box').emit('fuga');
@@ -61,7 +61,8 @@
 					    //document.querySelector('#tower_5').emit('lostfound');
 
 					    //document.querySelector('#tower_8').setAttribute("visible", "false")
-					    document.querySelector('#tt').setAttribute("visible", false)
+					    document.querySelector('#tower_1').setAttribute("visible", "true")
+					    document.querySelector('#tt').setAttribute("visible", "false")
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
