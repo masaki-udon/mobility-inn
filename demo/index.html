@@ -24,6 +24,7 @@
 			    init: function() {
 				    console.log("load")
 				    const showImage = ({detail}) => {
+					    this.tower2.visible = "true";
 					    document.querySelector('#target_Tower').emit('markerfound');
 					    document.querySelector('#tower_2').emit('markerfound');
 					    document.querySelector('#tower_2_1').emit('markerfound');
@@ -104,8 +105,7 @@
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"
-				      visible="true">
+				     scale="0.01 0.01 0.01">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
@@ -297,7 +297,7 @@
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 	  visible="false">
-				<a-animation attribute="visible" to="true" delay="2000">
+				<a-animation property="visible" to="true" delay="2000">
 					<!--
                                           animation="property: visible; to: true; delay: 14500">
 					-->
