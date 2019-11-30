@@ -83,9 +83,9 @@
 				<a-asset-item id="tower25" src="model/H26.glb"></a-asset-item>
 				<a-asset-item id="tower26" src="model/H27.glb"></a-asset-item>
 				<a-asset-item id="tower27" src="model/H28.glb"></a-asset-item>
+				-->
 				<a-asset-item id="tower28" src="model/H29.glb"></a-asset-item>
 				<a-asset-item id="tower29" src="model/Building.glb"></a-asset-item>
-				-->
 			</a-assets>
 
 			<a-camera
@@ -283,19 +283,25 @@
 			     	      visible="false"
                                           animation="property: visible; to: true; delay: 13500">
 			    </a-gltf-model>
+			    -->
 			    <a-gltf-model src="#tower28"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
+				  visible="false"
+                                          animation="property: visible; to: true; delay: 300">
+	       <!--
                                           animation="property: visible; to: true; delay: 14000">
+	       -->
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower29"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
+	  visible="false">
+				<a-animation attribute="visible" to="true" delay="2000">
+					<!--
                                           animation="property: visible; to: true; delay: 14500">
+					-->
 			    </a-gltf-model>
-			    -->
 			</a-entity>
 		</a-scene>
 	</body>
