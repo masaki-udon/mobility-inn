@@ -17,6 +17,19 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
+			AFRAME.registerComponent('show-tower', {
+				init: function() {
+					const showImage = ({detail}) => {
+					    document.querySelector('#tt').emit('markerfound');
+					}
+				        const hideImage = ({detail}) => {
+					    document.querySelector('#tt').emit('lostfound');
+					}
+				        this.el.sceneEl.addEventListener('xrimagefound', showImage)
+				        this.el.sceneEl.addEventListener('xrimagelost', hideImage)
+				        this.el.sceneEl.addEventListener('xrimageloading', hideImage)
+				}
+			})
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
@@ -33,9 +46,10 @@
 					    document.querySelector('#tower_4').emit('markerfound');
 					    document.querySelector('#tower_5').emit('markerfound');
 
-					    document.querySelector('#tower_8').visible = true;
+					    document.querySelector('#tower_8').setAttribute("visible", "true")
 				    }
 				    const hideImage = ({detail}) => {
+					    document.querySelector('#box').emit('fuga');
 
 					    document.querySelector('#target_Tower').emit('lostfound');
 					    document.querySelector('#tower_2').emit('lostfound');
@@ -44,7 +58,7 @@
 					    document.querySelector('#tower_4').emit('lostfound');
 					    document.querySelector('#tower_5').emit('lostfound');
 
-					    document.querySelector('#tower_8').visible = false;
+					    document.querySelector('#tower_8').setAttribute("visible", "false")
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
@@ -108,8 +122,16 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
 			<a-box position="0 1.6 0" id="box"
-                               animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; begin: hoge;">
+                               animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; loop: true; begin: hoge;"
+                               animation__2="property: position; to: -5 1.6 0; dur: 1500; easing: linear; loop: true; begin: fuga;">
 			</a-box>
+
+			<a-gltf-model show-tower xrextras-named-image-target="name: showTower"
+			              src="#tower29"
+		 		      id="tt"
+		  	    	      xrextras-one-finger-rotate
+		                      scale="0.01 0.01 0.01">
+			    </a-gltf-model>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
