@@ -2,116 +2,276 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    	<meta name="apple-mobile-web-app-capable" content="yes">
+
 		<title>デモページ</title>
-		<script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
+
+		<script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
+	    	<script src="https://cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+
 	        <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
 	        <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
+
+		<!-- 8th Wall API key -->
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
-
-	<script>
-		AFRAME.registerComponent('photo-mode', {
-			init: function() {
-				const container = document.getElementById('photoModeContainer');
-				const image = document.getElementById('photoModeImage');
-				const shutterButton = document.getElementById('shutterButton');
-				const closeButton = document.getElementById('closeButton');
-
-				// Container starts hidden so it isn't visible when the page is still loading
-				container.style.display = 'block';
-
-				closeButton.addEventListener('click', () => {
-					container.classList.remove('photo');
-				})
-
-				shutterButton.addEventListener('click', () => {
-					// Emit a screenshotrequest to the xrweb component
-					this.el.sceneEl.emit('screenshotrequest');
-
-					// Show the flash while the image is being taken
-					container.classList.add('flash');
-				})
-
-				this.el.sceneEl.addEventListener('screenshotready', e => {
-					// Hide the flash
-					container.classList.remove('flash');
-
-					// If an error occurs while trying to take the screenshot, e.detail will be empty.
-					// We could either retry or return control to the user
-					if (!e.detail) {
-						return;
-					}
-
-					// e.detail is the base64 representation of the JPEG screenshot
-					image.src = 'data:image/jpeg;base64,' + e.detail;
-
-					var a = document.createElement('a');
-					a.href = image.src;
-					a.download = "download.jpg";
-					a.click();
-
-					// Show the photo
-					container.classList.add('photo');
-				})
-			}
-		})
-	</script>
-	<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-		<div id="photoModeContainer" style="display: none">
-			<img id="photoModeImage">
-			<div id="flash"></div>
-			<div id="shutterButton" style=""></div>
-			<div id="closeButton" style=""></div>
-		</div>
-		<a-scene xrweb
-			photo-mode>
+		<a-scene
+		      xrweb="disableWorldTracking: true"
+		      xrextras-almost-there
+		      xrextras-runtime-error
+		      xrextras-loading >
 			<a-assets>
-				<a-asset-item id="tower1" src="model/tower_01.glb"></a-asset-item>
-				<a-asset-item id="tower2" src="model/tower_02.glb"></a-asset-item>
-				<a-asset-item id="tower3" src="model/tower_03.glb"></a-asset-item>
-				<a-asset-item id="tower4" src="model/tower_04.glb"></a-asset-item>
-				<a-asset-item id="tower5" src="model/tower_05.glb"></a-asset-item>
+				<a-asset-item id="tower1" src="model/H1c.glb"></a-asset-item>
+				<a-asset-item id="tower2" src="model/H2.glb"></a-asset-item>
+				<a-asset-item id="tower3" src="model/H3.glb"></a-asset-item>
+				<a-asset-item id="tower4" src="model/H4.glb"></a-asset-item>
+				<a-asset-item id="tower5" src="model/H5.glb"></a-asset-item>
+				<a-asset-item id="tower6" src="model/H6.glb"></a-asset-item>
+				<a-asset-item id="tower7" src="model/H7.glb"></a-asset-item>
+				<a-asset-item id="tower8" src="model/H8.glb"></a-asset-item>
+				<a-asset-item id="tower9" src="model/H9.glb"></a-asset-item>
+				<a-asset-item id="tower10" src="model/H10.glb"></a-asset-item>
+				<a-asset-item id="tower11" src="model/H11.glb"></a-asset-item>
+				<a-asset-item id="tower12" src="model/H13.glb"></a-asset-item>
+				<a-asset-item id="tower13" src="model/H14.glb"></a-asset-item>
+				<a-asset-item id="tower14" src="model/H15.glb"></a-asset-item>
+				<a-asset-item id="tower15" src="model/H16.glb"></a-asset-item>
+				<a-asset-item id="tower16" src="model/H17.glb"></a-asset-item>
+				<a-asset-item id="tower17" src="model/H18.glb"></a-asset-item>
+				<a-asset-item id="tower18" src="model/H19.glb"></a-asset-item>
+				<a-asset-item id="tower19" src="model/H20.glb"></a-asset-item>
+				<a-asset-item id="tower20" src="model/H21.glb"></a-asset-item>
+				<a-asset-item id="tower21" src="model/H22.glb"></a-asset-item>
+				<a-asset-item id="tower22" src="model/H23.glb"></a-asset-item>
+				<a-asset-item id="tower23" src="model/H24.glb"></a-asset-item>
+				<a-asset-item id="tower24" src="model/H25.glb"></a-asset-item>
+				<a-asset-item id="tower25" src="model/H26.glb"></a-asset-item>
+				<a-asset-item id="tower26" src="model/H27.glb"></a-asset-item>
+				<a-asset-item id="tower27" src="model/H28.glb"></a-asset-item>
+				<a-asset-item id="tower28" src="model/H29.glb"></a-asset-item>
+				<a-asset-item id="tower29" src="model/Building.glb"></a-asset-item>
 			</a-assets>
 
-			<a-camera position="0 4 10"></a-camera>
+			<a-camera
+				position="0 4 10"
+			        raycaster="objects: .cantap"
+				cursor="fuse: false; rayOrigin: mouse;">
+			</a-camera>
 
-			<a-text value="12/2 DEMO!"
-	                        color="red"
-			        animation="property: position; from: 0 0 0; to: 5 0 0; dur: 1500; easing: linear; dir: alternate; loop: true"
-          	                animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 1500; easing: linear; dir: alternate; loop: true">
-			</a-text>
+      			<a-light type="directional" intensity="0.5"
+			        animation="property: position; from: -5 -5 5; to: 5 5 5; dur: 2000; easing: linear; dir: alternate; loop: true">
+      			</a-light>
 
-			<a-gltf-model src="#tower1"
-		                      position="-1 -1 -1"
-			              rotation="90 0 0"
-				      visible="false"
-                                      animation="property: visible; to: true; delay: 1000">
-			</a-gltf-model>
-			<a-gltf-model src="#tower2"
-		                      position="-1 -1 -1"
-			              rotation="90 0 0"
-			 	      visible="false"
-                                      animation="property: visible; to: true; delay: 2000">
-			</a-gltf-model>
-			<a-gltf-model src="#tower3"
-		                      position="-1 -1 -1"
-			              rotation="90 0 0"
-						visible="false"
-                                                animation="property: visible; to: true; delay: 3000">
-			</a-gltf-model>
-			<a-gltf-model src="#tower4"
-		                      position="-1 -1 -1"
-			              rotation="90 0 0"
-				      visible="false"
-                                      animation="property: visible; to: true; delay: 4000">
-			</a-gltf-model>
-			<a-gltf-model src="#tower5"
-		                      position="-1 -1 -1"
-			              rotation="90 0 0"
-			 	      visible="false"
-                                      animation="property: visible; to: true; delay: 5000">
-			</a-gltf-model>
+      			<a-light type="ambient" intensity="1"></a-light>
+
+
+      			<a-entity xrextras-named-image-target="name: targetTower">
+			    <a-gltf-model src="#tower1"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			    	      visible="false"
+                                          animation="property: visible; to: true; delay: 1000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower2"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 2000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower3"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			    			visible="false"
+                                                    animation="property: visible; to: true; delay: 3000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower4"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			    	      visible="false"
+                                          animation="property: visible; to: true; delay: 4000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower5"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 5000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower6"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 6000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower7"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 7000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower8"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 8000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower9"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 9000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower10"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 10000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower11"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 11000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower12"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 12000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower13"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 13000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower14"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 14000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower15"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 15000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower16"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 16000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower17"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 17000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower18"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 18000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower19"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 19000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower20"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 20000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower21"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 21000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower22"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 22000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower23"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 23000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower24"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 24000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower25"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 25000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower26"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 26000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower27"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 27000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower28"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 28000">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower29"
+		  	    	      xrextras-one-finger-rotate
+		                          position="-1 -1 -1"
+			                  rotation="90 0 0"
+			     	      visible="false"
+                                          animation="property: visible; to: true; delay: 29000">
+			    </a-gltf-model>
+			</a-entity>
 
 
 		</a-scene>
