@@ -25,6 +25,8 @@
 				    console.log("load")
 				    const showImage = ({detail}) => {
 					    this.tower_8.visible = "true";
+					    document.querySelector('#box').emit('hoge');
+
 					    document.querySelector('#target_Tower').emit('markerfound');
 					    document.querySelector('#tower_2').emit('markerfound');
 					    document.querySelector('#tower_2_1').emit('markerfound');
@@ -34,6 +36,7 @@
 				    }
 				    const hideImage = ({detail}) => {
 					    this.tower_8.visible = "false";
+
 					    document.querySelector('#target_Tower').emit('lostfound');
 					    document.querySelector('#tower_2').emit('lostfound');
 					    document.querySelector('#tower_2_1').emit('lostfound');
@@ -96,12 +99,15 @@
 				cursor="fuse: false; rayOrigin: mouse;">
 			</a-camera>
 
-			<a-light type="directional" intensity="0.5">
-				<a-animation attribute="position" from="-5 -5 5" to="5 5 5" dur="2000" easing="linear" dir="alternate" loop="true">
+			<a-light type="directional" intensity="0.5"
+			       animation="property: position; from: -5 -5 5; to: 5 5 5; dur: 2000; easing: linear; dir: alternate; loop: true">
       			</a-light>
 
       			<a-light type="ambient" intensity="1"></a-light>
 
+			<a-box position="0 1.6 0" id="box"
+                               animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; loop: true; begin: hoge;">
+			</a-box>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
@@ -291,12 +297,9 @@
                                           animation="property: visible; to: true; delay: 14000">
 			    </a-gltf-model>
 			    -->
-			    <a-gltf-model src="#tower29"
+			    <a-gltf-model src="#tower28"
 		  	    	      xrextras-one-finger-rotate
 		                      scale="0.01 0.01 0.01">
-					<!--
-                                          animation="property: visible; to: true; delay: 14500">
-					-->
 			    </a-gltf-model>
 			</a-entity>
 		</a-scene>
