@@ -27,7 +27,7 @@
 					}
 				        this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				        this.el.sceneEl.addEventListener('xrimagelost', hideImage)
-				        this.el.sceneEl.addEventListener('xrimageloading', hideImage)
+				        this.el.sceneEl.addEventListener('xrimagescanning', hideImage)
 				}
 			})
 			AFRAME.registerComponent('target-tower', {
@@ -44,10 +44,10 @@
 					    //document.querySelector('#tower_2_1').emit('markerfound');
 					    //document.querySelector('#tower_3').emit('markerfound');
 					    //document.querySelector('#tower_4').emit('markerfound');
-					    document.querySelector('#tower_5').emit('lostfound');
-					    document.querySelector('#tower_5').emit('markerfound');
+					    //document.querySelector('#tower_5').emit('lostfound');
+					    //document.querySelector('#tower_5').emit('markerfound');
 
-					    //document.querySelector('#tower_2').setAttribute("visible", "true")
+					    document.querySelector('#tower_1').setAttribute("visible", "true")
 					    document.querySelector('#tt').setAttribute("visible", true)
 				    }
 				    const hideImage = ({detail}) => {
@@ -61,10 +61,12 @@
 					    //document.querySelector('#tower_5').emit('lostfound');
 
 					    //document.querySelector('#tower_8').setAttribute("visible", "false")
+					    document.querySelector('#tt').setAttribute("visible", false)
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
-				    this.el.sceneEl.addEventListener('xrimageloading', hideImage)
+				    //this.el.sceneEl.addEventListener('xrimageloading', hideImage)
+				    this.el.sceneEl.addEventListener('xrimagescanning', hideImage)
 				    console.log("fin")
 			    }
 			})
@@ -78,6 +80,7 @@
 		      xrextras-loading >
 			<a-assets>
 				<a-asset-item id="tower1" src="model/H1c.glb"></a-asset-item>
+				<!--
 				<a-asset-item id="tower2" src="model/H2.glb"></a-asset-item>
 				<a-asset-item id="tower2_1" src="model/H2a.glb"></a-asset-item>
 				<a-asset-item id="tower3" src="model/H3.glb"></a-asset-item>
@@ -86,7 +89,6 @@
 				<a-asset-item id="tower6" src="model/H6.glb"></a-asset-item>
 				<a-asset-item id="tower7" src="model/H7.glb"></a-asset-item>
 				<a-asset-item id="tower8" src="model/H8.glb"></a-asset-item>
-				<!--
 				<a-asset-item id="tower9" src="model/H9.glb"></a-asset-item>
 				<a-asset-item id="tower10" src="model/H10.glb"></a-asset-item>
 				<a-asset-item id="tower11" src="model/H11.glb"></a-asset-item>
@@ -124,8 +126,8 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
 			<a-box position="0 1.6 0" id="box"
-                               animation="property: position; from: 0 1.6 0; to: 5 1.6 0; dur: 1500; easing: linear; loop: true; begin: hoge; end: fuga;"
-                               animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 1500; easing: linear; loop: true; begin: fuga; end: hoge;">
+                               animation="property: position; from: 0 1.6 0; to: 5 1.6 0; dur: 3000; easing: linear; begin: hoge; end: fuga;"
+                               animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 1000; easing: linear; begin: fuga; end: hoge;">
 			</a-box>
 
 			<a-entity show-tower xrextras-named-image-target="name: showTower">
@@ -134,17 +136,19 @@
 		 		      id="tt"
 	   			      scale="0.01 0.01 0.01"
 		  	    	      xrextras-one-finger-rotate
- 		                      animation="property: scale; from: 0.01 0.01 0.01; to: 1 1 1; dur: 3000; easing: linear; begin: markerfound;"
+ 		                      animation="property: scale; from: 0.001 0.001 0.001; to: 0.01 0.01 0.01; dur: 3000; easing: linear; begin: markerfound;"
 				      animation__2="property: visible; to: false; begin: lostfound;">
 			</a-gltf-model>
 			</a-entity>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
+		                      id="tower_1"
 		  	    	      xrextras-one-finger-rotate
 				     scale="0.01 0.01 0.01"
-				     visible="false">
+	 visible="false">
 			    </a-gltf-model>
+			    <!--
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
 		  	    	      xrextras-one-finger-rotate
@@ -205,7 +209,6 @@
 		     			scale="0.01 0.01 0.01"	
 	  visible="false">
 			    </a-gltf-model>
-			    <!--
 			    <a-gltf-model src="#tower9"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
