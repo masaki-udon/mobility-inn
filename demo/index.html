@@ -18,7 +18,7 @@
 
 		<script>
 			//AFRAME.registerComponent('targetTower', {
-			AFRAME.registerComponent('#target_Tower', {
+			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
 			    },
@@ -100,11 +100,11 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
 
-      			<a-entity xrextras-named-image-target="name: targetTower" id="target_Tower">
+      			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"
-				      visible="false">
+				      visible="true">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
