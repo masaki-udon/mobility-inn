@@ -48,7 +48,7 @@
 					    document.querySelector('#tower_5').emit('markerfound');
 
 					    //document.querySelector('#tower_2').setAttribute("visible", "true")
-					    document.querySelector('#tt').setAttribute("visible", "true")
+					    document.querySelector('#tt').setAttribute("visible", true)
 				    }
 				    const hideImage = ({detail}) => {
 					    //document.querySelector('#box').emit('fuga');
@@ -128,19 +128,22 @@
                                animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 1500; easing: linear; loop: true; begin: fuga; end: hoge;">
 			</a-box>
 
-			<a-gltf-model show-tower xrextras-named-image-target="name: showTower"
+			<a-entity show-tower xrextras-named-image-target="name: showTower">
+			<a-gltf-model 
 			              src="#tower29"
 		 		      id="tt"
+	   			      scale="0.01 0.01 0.01"
 		  	    	      xrextras-one-finger-rotate
- 		                      animation="property: scale; from: 0.0001 0.0001 0.0001; to: 1 1 1; dur: 3000; easing: linear; begin: markerfound;"
+ 		                      animation="property: scale; from: 0.01 0.01 0.01; to: 1 1 1; dur: 3000; easing: linear; begin: markerfound;"
 				      animation__2="property: visible; to: false; begin: lostfound;">
 			</a-gltf-model>
+			</a-entity>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
 				     scale="0.01 0.01 0.01"
-				     visible="true">
+				     visible="false">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
