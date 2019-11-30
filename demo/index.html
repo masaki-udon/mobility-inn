@@ -24,7 +24,6 @@
 			    init: function() {
 				    console.log("load")
 				    const showImage = ({detail}) => {
-					    this.tower_8.visible = "true";
 					    document.querySelector('#box').emit('hoge');
 
 					    document.querySelector('#target_Tower').emit('markerfound');
@@ -33,9 +32,10 @@
 					    document.querySelector('#tower_3').emit('markerfound');
 					    document.querySelector('#tower_4').emit('markerfound');
 					    document.querySelector('#tower_5').emit('markerfound');
+
+					    document.querySelector('#tower_8').visible = true;
 				    }
 				    const hideImage = ({detail}) => {
-					    this.tower_8.visible = "false";
 
 					    document.querySelector('#target_Tower').emit('lostfound');
 					    document.querySelector('#tower_2').emit('lostfound');
@@ -43,6 +43,8 @@
 					    document.querySelector('#tower_3').emit('lostfound');
 					    document.querySelector('#tower_4').emit('lostfound');
 					    document.querySelector('#tower_5').emit('lostfound');
+
+					    document.querySelector('#tower_8').visible = false;
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
@@ -106,7 +108,7 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
 			<a-box position="0 1.6 0" id="box"
-                               animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; loop: true; begin: hoge;">
+                               animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear; begin: hoge;">
 			</a-box>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
@@ -132,9 +134,9 @@
 		                      id="tower_3"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-					  visible="false">
-				    <a-animation attribute="visible" to="true" delay="1500" begin="markerfound"></a-animation>
-				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
+					  visible="false"
+ 		                      animation="property: visible; to: true; delay: 1500; begin: markerfound;"
+				      animation__2="property: visible; to: false; begin: lostfound;">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower4"
 		                      id="tower_4"
@@ -297,7 +299,7 @@
                                           animation="property: visible; to: true; delay: 14000">
 			    </a-gltf-model>
 			    -->
-			    <a-gltf-model src="#tower28"
+			    <a-gltf-model src="#tower29"
 		  	    	      xrextras-one-finger-rotate
 		                      scale="0.01 0.01 0.01">
 			    </a-gltf-model>
