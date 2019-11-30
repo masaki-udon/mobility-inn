@@ -17,7 +17,7 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
-			AFRAME.registerComponent('my-named-image-target', {
+			AFRAME.registerComponent('targetTower', {
 			    schema: {
 			        name: { type: 'string' }
 			    },
@@ -34,6 +34,7 @@
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
+				    this.el.sceneEl.addEventListener('xrimageloading', hideImage)
 			    }
 			})
 		</script>
@@ -95,7 +96,8 @@
       			<a-entity xrextras-named-image-target="name: targetTower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01">
+		     			scale="0.01 0.01 0.01"
+				      visible="false">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower2"
