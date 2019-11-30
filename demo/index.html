@@ -17,20 +17,6 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
-			AFRAME.registerComponent('show-tower', {
-				init: function() {
-					const showImage = ({detail}) => {
-					    document.querySelector('#box').setAttribute("animation", "property: scale; from: 3 3 3; to: 1 1 1; dur: 1000; easing: linear;")
-					    //document.querySelector('#tt').emit('markerfound');
-					}
-				        const hideImage = ({detail}) => {
-					    document.querySelector('#box').setAttribute("animation", "property: scale; from: 1 1 1; to: 3 3 3; dur: 1000; easing: linear;")
-					}
-				        this.el.sceneEl.addEventListener('xrimagefound', showImage)
-				        this.el.sceneEl.addEventListener('xrimagelost', hideImage)
-				        this.el.sceneEl.addEventListener('xrimagescanning', hideImage)
-				}
-			})
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
@@ -38,27 +24,67 @@
 			    init: function() {
 				    console.log("load")
 				    const showImage = ({detail}) => {
-					    //document.querySelector('#box').emit('hoge');
-
-					    //document.querySelector('#target_Tower').emit('markerfound');
-					    //document.querySelector('#tower_2').emit('markerfound');
-					    //document.querySelector('#tower_2_1').emit('markerfound');
-					    //document.querySelector('#tower_3').emit('markerfound');
-					    //document.querySelector('#tower_4').emit('markerfound');
-					    //document.querySelector('#tower_5').emit('lostfound');
-					    //document.querySelector('#tower_5').emit('markerfound');
-
-					    document.querySelector('#tower_1').setAttribute("visible", "false")
-					    document.querySelector('#tower_2').setAttribute("visible", "false")
+					    document.querySelector('#tower_1').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_2').setAttribute(  "visible", "false")
 					    document.querySelector('#tower_2_1').setAttribute("visible", "false")
-					    document.querySelector('#tower_3').setAttribute("visible", "false")
-					    document.querySelector('#tower_4').setAttribute("visible", "false")
+					    document.querySelector('#tower_3').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_4').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_5').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_6').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_7').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_8').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_9').setAttribute(  "visible", "false")
+					    document.querySelector('#tower_10').setAttribute( "visible", "false")
+					    document.querySelector('#tower_11').setAttribute( "visible", "false")
+					    document.querySelector('#tower_12').setAttribute( "visible", "false")
+					    document.querySelector('#tower_13').setAttribute( "visible", "false")
+					    document.querySelector('#tower_14').setAttribute( "visible", "false")
+					    document.querySelector('#tower_15').setAttribute( "visible", "false")
+					    document.querySelector('#tower_16').setAttribute( "visible", "false")
+					    document.querySelector('#tower_17').setAttribute( "visible", "false")
+					    document.querySelector('#tower_18').setAttribute( "visible", "false")
+					    document.querySelector('#tower_19').setAttribute( "visible", "false")
+					    document.querySelector('#tower_20').setAttribute( "visible", "false")
+					    document.querySelector('#tower_21').setAttribute( "visible", "false")
+					    document.querySelector('#tower_22').setAttribute( "visible", "false")
+					    document.querySelector('#tower_23').setAttribute( "visible", "false")
+					    document.querySelector('#tower_24').setAttribute( "visible", "false")
+					    document.querySelector('#tower_25').setAttribute( "visible", "false")
+					    document.querySelector('#tower_26').setAttribute( "visible", "false")
+					    document.querySelector('#tower_27').setAttribute( "visible", "false")
+					    document.querySelector('#tower_28').setAttribute( "visible", "false")
+					    document.querySelector('#tower_29').setAttribute( "visible", "false")
 
 					    document.querySelector('#tower_1').setAttribute(  "animation", "property: visible; to: true; delay:   500;")
 					    document.querySelector('#tower_2').setAttribute(  "animation", "property: visible; to: true; delay:  1000;")
 					    document.querySelector('#tower_2_1').setAttribute("animation", "property: visible; to: true; delay:  1500;")
 					    document.querySelector('#tower_3').setAttribute(  "animation", "property: visible; to: true; delay:  2000;")
 					    document.querySelector('#tower_4').setAttribute(  "animation", "property: visible; to: true; delay:  2500;")
+					    document.querySelector('#tower_5').setAttribute(  "animation", "property: visible; to: true; delay:  3000;")
+					    document.querySelector('#tower_6').setAttribute(  "animation", "property: visible; to: true; delay:  3500;")
+					    document.querySelector('#tower_7').setAttribute(  "animation", "property: visible; to: true; delay:  4000;")
+					    document.querySelector('#tower_8').setAttribute(  "animation", "property: visible; to: true; delay:  4500;")
+					    document.querySelector('#tower_9').setAttribute(  "animation", "property: visible; to: true; delay:  5000;")
+					    document.querySelector('#tower_10').setAttribute( "animation", "property: visible; to: true; delay:  5500;")
+					    document.querySelector('#tower_11').setAttribute( "animation", "property: visible; to: true; delay:  6000;")
+					    document.querySelector('#tower_12').setAttribute( "animation", "property: visible; to: true; delay:  6500;")
+					    document.querySelector('#tower_13').setAttribute( "animation", "property: visible; to: true; delay:  7000;")
+					    document.querySelector('#tower_14').setAttribute( "animation", "property: visible; to: true; delay:  7500;")
+					    document.querySelector('#tower_15').setAttribute( "animation", "property: visible; to: true; delay:  8000;")
+					    document.querySelector('#tower_16').setAttribute( "animation", "property: visible; to: true; delay:  8500;")
+					    document.querySelector('#tower_17').setAttribute( "animation", "property: visible; to: true; delay:  9000;")
+					    document.querySelector('#tower_18').setAttribute( "animation", "property: visible; to: true; delay:  9500;")
+					    document.querySelector('#tower_19').setAttribute( "animation", "property: visible; to: true; delay: 10000;")
+					    document.querySelector('#tower_20').setAttribute( "animation", "property: visible; to: true; delay: 10500;")
+					    document.querySelector('#tower_21').setAttribute( "animation", "property: visible; to: true; delay: 11000;")
+					    document.querySelector('#tower_22').setAttribute( "animation", "property: visible; to: true; delay: 11500;")
+					    document.querySelector('#tower_23').setAttribute( "animation", "property: visible; to: true; delay: 12000;")
+					    document.querySelector('#tower_24').setAttribute( "animation", "property: visible; to: true; delay: 12500;")
+					    document.querySelector('#tower_25').setAttribute( "animation", "property: visible; to: true; delay: 13000;")
+					    document.querySelector('#tower_26').setAttribute( "animation", "property: visible; to: true; delay: 13500;")
+					    document.querySelector('#tower_27').setAttribute( "animation", "property: visible; to: true; delay: 14000;")
+					    document.querySelector('#tower_28').setAttribute( "animation", "property: visible; to: true; delay: 14500;")
+					    document.querySelector('#tower_29').setAttribute( "animation", "property: visible; to: true; delay: 15000;")
 				    }
 				    const hideImage = ({detail}) => {
 					    document.querySelector('#tower_1').removeAttribute("animation")
@@ -66,20 +92,34 @@
 					    document.querySelector('#tower_2_1').removeAttribute("animation")
 					    document.querySelector('#tower_3').removeAttribute("animation")
 					    document.querySelector('#tower_4').removeAttribute("animation")
-					    //document.querySelector('#box').emit('fuga');
-
-					    //document.querySelector('#target_Tower').emit('lostfound');
-					    //document.querySelector('#tower_2').emit('lostfound');
-					    //document.querySelector('#tower_2_1').emit('lostfound');
-					    //document.querySelector('#tower_3').emit('lostfound');
-					    //document.querySelector('#tower_4').emit('lostfound');
-					    //document.querySelector('#tower_5').emit('lostfound');
-
-					    //document.querySelector('#tower_8').setAttribute("visible", "false")
+					    document.querySelector('#tower_5').removeAttribute("animation")
+					    document.querySelector('#tower_6').removeAttribute("animation")
+					    document.querySelector('#tower_7').removeAttribute("animation")
+					    document.querySelector('#tower_8').removeAttribute("animation")
+					    document.querySelector('#tower_9').removeAttribute("animation")
+					    document.querySelector('#tower_10').removeAttribute("animation")
+					    document.querySelector('#tower_11').removeAttribute("animation")
+					    document.querySelector('#tower_12').removeAttribute("animation")
+					    document.querySelector('#tower_13').removeAttribute("animation")
+					    document.querySelector('#tower_14').removeAttribute("animation")
+					    document.querySelector('#tower_15').removeAttribute("animation")
+					    document.querySelector('#tower_16').removeAttribute("animation")
+					    document.querySelector('#tower_17').removeAttribute("animation")
+					    document.querySelector('#tower_18').removeAttribute("animation")
+					    document.querySelector('#tower_19').removeAttribute("animation")
+					    document.querySelector('#tower_20').removeAttribute("animation")
+					    document.querySelector('#tower_21').removeAttribute("animation")
+					    document.querySelector('#tower_22').removeAttribute("animation")
+					    document.querySelector('#tower_23').removeAttribute("animation")
+					    document.querySelector('#tower_24').removeAttribute("animation")
+					    document.querySelector('#tower_25').removeAttribute("animation")
+					    document.querySelector('#tower_26').removeAttribute("animation")
+					    document.querySelector('#tower_27').removeAttribute("animation")
+					    document.querySelector('#tower_28').removeAttribute("animation")
+					    document.querySelector('#tower_29').removeAttribute("animation")
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
-				    //this.el.sceneEl.addEventListener('xrimageloading', hideImage)
 				    this.el.sceneEl.addEventListener('xrimagescanning', hideImage)
 				    console.log("fin")
 			    }
@@ -98,7 +138,6 @@
 				<a-asset-item id="tower2_1" src="model/H2a.glb"></a-asset-item>
 				<a-asset-item id="tower3" src="model/H3.glb"></a-asset-item>
 				<a-asset-item id="tower4" src="model/H4.glb"></a-asset-item>
-				<!--
 				<a-asset-item id="tower5" src="model/H5.glb"></a-asset-item>
 				<a-asset-item id="tower6" src="model/H6.glb"></a-asset-item>
 				<a-asset-item id="tower7" src="model/H7.glb"></a-asset-item>
@@ -123,7 +162,6 @@
 				<a-asset-item id="tower26" src="model/H27.glb"></a-asset-item>
 				<a-asset-item id="tower27" src="model/H28.glb"></a-asset-item>
 				<a-asset-item id="tower28" src="model/H29.glb"></a-asset-item>
-				-->
 				<a-asset-item id="tower29" src="model/Building.glb"></a-asset-item>
 			</a-assets>
 
@@ -138,20 +176,6 @@
       			</a-light>
 
       			<a-light type="ambient" intensity="1"></a-light>
-
-			<a-box position="0 1.6 0" id="box"
-                               animation="property: position; from: 0 1.6 0; to: 5 1.6 0; dur: 30000; easing: linear;"
-                               animation__2="property: scale; from: 1 1 1; to: 3 3 3; dur: 10000; easing: linear;">
-			</a-box>
-
-			<a-entity show-tower xrextras-named-image-target="name: showTower">
-			<a-gltf-model 
-			              src="#tower29"
-		 		      id="tt"
-	   			      scale="0.01 0.01 0.01"
-	                              xrextras-one-finger-rotate>
-			</a-gltf-model>
-			</a-entity>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#tower1"
@@ -179,157 +203,128 @@
 		  	    	      xrextras-one-finger-rotate
 			scale="0.01 0.01 0.01">
 			    </a-gltf-model>
-			    <!--
 			    <a-gltf-model src="#tower5"
 		                      id="tower_5"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-	  visible="false">
-				    <a-animation attribute="visible" to="true" delay="2500" begin="markerfound"></a-animation>
-				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
+			scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower6"
+		                      id="tower_6"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-	  visible="false">
-				    <a-animation attribute="visible" to="true" delay="3000" begin="markerfound"></a-animation>
-				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower7"
+		                      id="tower_7"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-	  visible="false">
-				    <a-animation attribute="visible" to="true" delay="3500" begin="markerfound"></a-animation>
-				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower8"
 		     			id="tower_8"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-	  visible="false">
+	  scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower9"
+		                      id="tower_9"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-	  visible="false">
-				    <a-animation attribute="visible" to="true" delay="4000" begin="markerfound"></a-animation>
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower10"
+		                      id="tower_10"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 5000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower11"
+		                      id="tower_11"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 5500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower12"
+		                      id="tower_12"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 6000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower13"
+		                      id="tower_13"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 6500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower14"
+		                      id="tower_14"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 7000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower15"
+		                      id="tower_15"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 7500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower16"
+		                      id="tower_16"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 8000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower17"
+		                      id="tower_17"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 8500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower18"
+		                      id="tower_18"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 9000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower19"
+		                      id="tower_19"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 9500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower20"
+		                      id="tower_20"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 10000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower21"
+		                      id="tower_21"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 10500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower22"
+		                      id="tower_22"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 11000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower23"
+		                      id="tower_23"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 11500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower24"
+		                      id="tower_24"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 12000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower25"
+		                      id="tower_25"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 12500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower26"
+		                      id="tower_26"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 13000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower27"
+		                      id="tower_27"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 13500">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower28"
+		                      id="tower_28"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-				        visible="false"
-                                          animation="property: visible; to: true; delay: 14000">
+		     scale="0.01 0.01 0.01"	>
 			    </a-gltf-model>
-			    -->
 			    <a-gltf-model src="#tower29"
+		                      id="tower_29"
 		  	    	      xrextras-one-finger-rotate
 		                      scale="0.01 0.01 0.01">
 			    </a-gltf-model>
