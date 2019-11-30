@@ -20,7 +20,7 @@
 			AFRAME.registerComponent('show-tower', {
 				init: function() {
 					const showImage = ({detail}) => {
-					    document.querySelector('#tt').setAttribute("animation", "property: scale; from: 3 3 3; to: 1 1 1; dur: 1000; easing: linear;")
+					    document.querySelector('#box').setAttribute("animation", "property: scale; from: 3 3 3; to: 1 1 1; dur: 1000; easing: linear;")
 					    document.querySelector('#tt').emit('markerfound');
 					}
 				        const hideImage = ({detail}) => {
@@ -49,7 +49,7 @@
 					    //document.querySelector('#tower_5').emit('markerfound');
 
 					    document.querySelector('#tower_1').setAttribute("visible", "false")
-					    document.querySelector('#tt').setAttribute("visible", "true")
+					    document.querySelector('#tower_1').emit('markerfound');
 				    }
 				    const hideImage = ({detail}) => {
 					    //document.querySelector('#box').emit('fuga');
@@ -62,8 +62,6 @@
 					    //document.querySelector('#tower_5').emit('lostfound');
 
 					    //document.querySelector('#tower_8').setAttribute("visible", "false")
-					    document.querySelector('#tower_1').setAttribute("visible", "true")
-					    document.querySelector('#tt').setAttribute("visible", "false")
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
@@ -148,7 +146,8 @@
 		                      id="tower_1"
 		  	    	      xrextras-one-finger-rotate
 				     scale="0.01 0.01 0.01"
-	 visible="false">
+	 visible="false"
+ 		                      animation="property: visible; to: true; delay: 1000; begin: markerfound;"
 			    </a-gltf-model>
 			    <!--
 			    <a-gltf-model src="#tower2"
