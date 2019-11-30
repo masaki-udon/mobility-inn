@@ -23,6 +23,10 @@
 		      xrextras-runtime-error
 		      xrextras-loading >
 			<a-assets>
+				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/frPqTFGeRNM -->
+				<!-- Tower model -->
+				<a-asset-item id="tower-model" src="model/tokyotower-town.glb"></a-asset-item>
+
 				<a-asset-item id="tower1" src="model/H1c.glb"></a-asset-item>
 				<a-asset-item id="tower2" src="model/H2.glb"></a-asset-item>
 				<a-asset-item id="tower3" src="model/H3.glb"></a-asset-item>
@@ -67,6 +71,14 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
       			<a-entity xrextras-named-image-target="name: targetTower">
+			<!--
+        		    <a-entity xrextras-one-finger-rotate gltf-model="#tower-model" scale="0.01 0.01 0.01"></a-entity>
+			-->
+        		    <a-gltf-model src="#tower-model"
+				    xrextras-one-finger-rotate
+				    scale="0.01 0.01 0.01">
+			    </a-gltf-model>
+
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.001 0.001 0.001"	
