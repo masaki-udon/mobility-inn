@@ -37,19 +37,21 @@
 			    init: function() {
 				    console.log("load")
 				    const showImage = ({detail}) => {
-					    document.querySelector('#box').emit('hoge');
+					    //document.querySelector('#box').emit('hoge');
 
 					    //document.querySelector('#target_Tower').emit('markerfound');
 					    //document.querySelector('#tower_2').emit('markerfound');
 					    //document.querySelector('#tower_2_1').emit('markerfound');
 					    //document.querySelector('#tower_3').emit('markerfound');
 					    //document.querySelector('#tower_4').emit('markerfound');
-					    //document.querySelector('#tower_5').emit('markerfound');
+					    document.querySelector('#tower_5').emit('lostfound');
+					    document.querySelector('#tower_5').emit('markerfound');
 
-					    document.querySelector('#tower_2').setAttribute("visible", "true")
+					    //document.querySelector('#tower_2').setAttribute("visible", "true")
+					    document.querySelector('#tt').setAttribute("visible", "true")
 				    }
 				    const hideImage = ({detail}) => {
-					    document.querySelector('#box').emit('fuga');
+					    //document.querySelector('#box').emit('fuga');
 
 					    //document.querySelector('#target_Tower').emit('lostfound');
 					    //document.querySelector('#tower_2').emit('lostfound');
