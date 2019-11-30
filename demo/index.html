@@ -21,9 +21,11 @@
 				init: function() {
 					const showImage = ({detail}) => {
 					    document.querySelector('#box').setAttribute("animation", "property: scale; from: 3 3 3; to: 1 1 1; dur: 1000; easing: linear;")
-					    document.querySelector('#tt').emit('markerfound');
+					    //document.querySelector('#tt').emit('markerfound');
+					    document.querySelector('#tt').setAttribute("visible", "true")
 					}
 				        const hideImage = ({detail}) => {
+					    document.querySelector('#box').setAttribute("animation", "property: scale; from: 1 1 1; to: 3 3 3; dur: 1000; easing: linear;")
 					    document.querySelector('#tt').emit('lostfound');
 					}
 				        this.el.sceneEl.addEventListener('xrimagefound', showImage)
@@ -147,7 +149,7 @@
 		  	    	      xrextras-one-finger-rotate
 				     scale="0.01 0.01 0.01"
 	 visible="false"
- 		                      animation="property: visible; to: true; delay: 1000; begin: markerfound;"
+  animation="property: visible; to: true; delay: 1000; begin: markerfound;">
 			    </a-gltf-model>
 			    <!--
 			    <a-gltf-model src="#tower2"
