@@ -23,10 +23,14 @@
 			    },
 			    init: function() {
 				    const showImage = ({detail}) => {
-					    document.querySelector('#tower').emit('markerfound');
+					    document.querySelector('#tower2').emit('markerfound');
+					    document.querySelector('#tower3').emit('markerfound');
+					    document.querySelector('#tower4').emit('markerfound');
 				    }
 				    const hideImage = ({detail}) => {
-					    document.querySelector('#tower').emit('lostfound');
+					    document.querySelector('#tower2').emit('lostfound');
+					    document.querySelector('#tower3').emit('lostfound');
+					    document.querySelector('#tower4').emit('lostfound');
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
@@ -88,12 +92,13 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
 
-      			<a-entity xrextras-named-image-target="name: targetTower" id="tower">
+      			<a-entity xrextras-named-image-target="name: targetTower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
+		                      id="tower2"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 				      visible="false">
@@ -101,6 +106,7 @@
 				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2_1"
+		                      id="tower3"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 				  visible="false">
@@ -108,6 +114,7 @@
 				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower3"
+		                      id="tower4"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 					  visible="false">
