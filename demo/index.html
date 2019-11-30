@@ -15,6 +15,24 @@
 
 		<!-- 8th Wall API key -->
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
+
+		<script>
+			AFRAME.registerComponent('my-named-image-target', {
+			    schema: {
+			        name: { type: 'string' }
+			    },
+			    init: function() {
+				    const showImage = ({detail}) => {
+					    document.querySelector('#tower').emit('markerfound');
+				    }
+				    const hideImage = ({detail}) => {
+					    document.querySelector('#tower').emit('lostfound');
+				    }
+				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
+				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
+			    }
+			})
+		</script>
 	</head>
 	<body>
 		<a-scene
@@ -23,10 +41,6 @@
 		      xrextras-runtime-error
 		      xrextras-loading >
 			<a-assets>
-				<!-- Credit to Poly by Google for the model: https://poly.google.com/view/frPqTFGeRNM -->
-				<!-- Tower model -->
-				<a-asset-item id="tower-model" src="model/tokyotower-town.glb"></a-asset-item>
-
 				<a-asset-item id="tower1" src="model/H1c.glb"></a-asset-item>
 				<a-asset-item id="tower2" src="model/H2.glb"></a-asset-item>
 				<a-asset-item id="tower2_1" src="model/H2a.glb"></a-asset-item>
@@ -35,6 +49,7 @@
 				<a-asset-item id="tower5" src="model/H5.glb"></a-asset-item>
 				<a-asset-item id="tower6" src="model/H6.glb"></a-asset-item>
 				<a-asset-item id="tower7" src="model/H7.glb"></a-asset-item>
+				<!--
 				<a-asset-item id="tower8" src="model/H8.glb"></a-asset-item>
 				<a-asset-item id="tower9" src="model/H9.glb"></a-asset-item>
 				<a-asset-item id="tower10" src="model/H10.glb"></a-asset-item>
@@ -57,6 +72,7 @@
 				<a-asset-item id="tower27" src="model/H28.glb"></a-asset-item>
 				<a-asset-item id="tower28" src="model/H29.glb"></a-asset-item>
 				<a-asset-item id="tower29" src="model/Building.glb"></a-asset-item>
+				-->
 			</a-assets>
 
 			<a-camera
@@ -71,36 +87,8 @@
 
       			<a-light type="ambient" intensity="1"></a-light>
 
-			<!--
-      			<a-entity xrextras-named-image-target="name: targetTower">
-			    <a-gltf-model src="#tower7"
-		  	    	      xrextras-one-finger-rotate
-		                      scale="0.01 0.01 0.01">
-			    </a-gltf-model>
-			</a-entity>
-			-->
-      			<a-entity xrextras-named-image-target="name: targetTower">
-			    <a-gltf-model src="#tower1"
-		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01">
-			    </a-gltf-model>
-			</a-entity>
-      			<a-entity xrextras-named-image-target="name: targetTower">
-			    <a-gltf-model src="#tower2"
-		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 500">
-			    </a-gltf-model>
-			</a-entity>
 
-      			<a-entity xrextras-named-image-target="name: targetTower">
-				<!--
-        		    <a-gltf-model src="#tower-model"
-				    xrextras-one-finger-rotate
-				    scale="0.01 0.01 0.01">
-			    </a-gltf-model>
-
+      			<a-entity xrextras-named-image-target="name: targetTower" id="tower">
 			    <a-gltf-model src="#tower1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01">
@@ -108,57 +96,64 @@
 			    <a-gltf-model src="#tower2"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 500">
+				      visible="false">
+				    <a-animation attribute="visible" to="true" delay="500" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
-				-->
 			    <a-gltf-model src="#tower2_1"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 1000">
+				  visible="false">
+				    <a-animation attribute="visible" to="true" delay="1000" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower3"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			    			visible="false"
-                                                    animation="property: visible; to: true; delay: 1500">
+					  visible="false">
+				    <a-animation attribute="visible" to="true" delay="1500" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower4"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			    	      visible="false"
-                                          animation="property: visible; to: true; delay: 2000">
+	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="2000" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower5"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 2500">
+	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="2500" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower6"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 3000">
+	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="3000" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower7"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 3500">
+	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="3500" begin="markerfound"></a-animation>
+				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
+			    <!--
 			    <a-gltf-model src="#tower8"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 7000">
+	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="3500" begin="markerfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower9"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-			     	      visible="false"
-                                          animation="property: visible; to: true; delay: 4500">
+	  visible="false">
+				    <a-animation attribute="visible" to="true" delay="4000" begin="markerfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower10"
 		  	    	      xrextras-one-finger-rotate
@@ -280,6 +275,7 @@
 			     	      visible="false"
                                           animation="property: visible; to: true; delay: 14500">
 			    </a-gltf-model>
+			    -->
 			</a-entity>
 		</a-scene>
 	</body>
