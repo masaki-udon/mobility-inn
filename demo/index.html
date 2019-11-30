@@ -24,7 +24,7 @@
 			    init: function() {
 				    console.log("load")
 				    const showImage = ({detail}) => {
-					    this.tower2.visible = "true";
+					    this.tower_8.visible = "true";
 					    document.querySelector('#target_Tower').emit('markerfound');
 					    document.querySelector('#tower_2').emit('markerfound');
 					    document.querySelector('#tower_2_1').emit('markerfound');
@@ -33,6 +33,7 @@
 					    document.querySelector('#tower_5').emit('markerfound');
 				    }
 				    const hideImage = ({detail}) => {
+					    this.tower_8.visible = "false";
 					    document.querySelector('#target_Tower').emit('lostfound');
 					    document.querySelector('#tower_2').emit('lostfound');
 					    document.querySelector('#tower_2_1').emit('lostfound');
@@ -160,6 +161,7 @@
 				    <a-animation attribute="visible" to="false" begin="lostfound"></a-animation>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower8"
+		     			id="tower_8"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
 	  visible="false">
@@ -282,21 +284,16 @@
 			     	      visible="false"
                                           animation="property: visible; to: true; delay: 13500">
 			    </a-gltf-model>
-			    -->
 			    <a-gltf-model src="#tower28"
 		  	    	      xrextras-one-finger-rotate
 		     			scale="0.01 0.01 0.01"	
-				  visible="false"
-                                          animation="property: visible; to: true; delay: 300">
-	       <!--
+				        visible="false"
                                           animation="property: visible; to: true; delay: 14000">
-	       -->
 			    </a-gltf-model>
+			    -->
 			    <a-gltf-model src="#tower29"
 		  	    	      xrextras-one-finger-rotate
-		     			scale="0.01 0.01 0.01"	
-	  visible="false">
-				<a-animation property="visible" to="true" delay="2000">
+		                      scale="0.01 0.01 0.01">
 					<!--
                                           animation="property: visible; to: true; delay: 14500">
 					-->
