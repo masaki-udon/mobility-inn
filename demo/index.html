@@ -53,6 +53,7 @@
 					    document.querySelector('#tower_27').setAttribute( "visible", "false")
 					    document.querySelector('#tower_28').setAttribute( "visible", "false")
 					    document.querySelector('#tower_29').setAttribute( "visible", "false")
+					    document.querySelector('#tower_30').setAttribute( "visible", "false")
 
 					    document.querySelector('#tower_1').setAttribute(  "animation", "property: visible; to: true; delay:   250;")
 					    document.querySelector('#tower_2').setAttribute(  "animation", "property: visible; to: true; delay:   500;")
@@ -84,6 +85,7 @@
 					    document.querySelector('#tower_27').setAttribute( "animation", "property: visible; to: true; delay:  7000;")
 					    document.querySelector('#tower_28').setAttribute( "animation", "property: visible; to: true; delay:  7250;")
 					    document.querySelector('#tower_29').setAttribute( "animation", "property: visible; to: true; delay:  7500;")
+					    document.querySelector('#tower_30').setAttribute( "animation", "property: visible; to: true; delay:  7750;")
 				    }
 				    const hideImage = ({detail}) => {
 					    document.querySelector('#tower_1').removeAttribute("animation")
@@ -116,6 +118,7 @@
 					    document.querySelector('#tower_27').removeAttribute("animation")
 					    document.querySelector('#tower_28').removeAttribute("animation")
 					    document.querySelector('#tower_29').removeAttribute("animation")
+					    document.querySelector('#tower_30').removeAttribute("animation")
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
@@ -143,24 +146,25 @@
 				<a-asset-item id="tower9" src="model/H9.glb"></a-asset-item>
 				<a-asset-item id="tower10" src="model/H10.glb"></a-asset-item>
 				<a-asset-item id="tower11" src="model/H11.glb"></a-asset-item>
-				<a-asset-item id="tower12" src="model/H13.glb"></a-asset-item>
-				<a-asset-item id="tower13" src="model/H14.glb"></a-asset-item>
-				<a-asset-item id="tower14" src="model/H15.glb"></a-asset-item>
-				<a-asset-item id="tower15" src="model/H16.glb"></a-asset-item>
-				<a-asset-item id="tower16" src="model/H17.glb"></a-asset-item>
-				<a-asset-item id="tower17" src="model/H18.glb"></a-asset-item>
-				<a-asset-item id="tower18" src="model/H19.glb"></a-asset-item>
-				<a-asset-item id="tower19" src="model/H20.glb"></a-asset-item>
-				<a-asset-item id="tower20" src="model/H21.glb"></a-asset-item>
-				<a-asset-item id="tower21" src="model/H22.glb"></a-asset-item>
-				<a-asset-item id="tower22" src="model/H23.glb"></a-asset-item>
-				<a-asset-item id="tower23" src="model/H24.glb"></a-asset-item>
-				<a-asset-item id="tower24" src="model/H25.glb"></a-asset-item>
-				<a-asset-item id="tower25" src="model/H26.glb"></a-asset-item>
-				<a-asset-item id="tower26" src="model/H27.glb"></a-asset-item>
-				<a-asset-item id="tower27" src="model/H28.glb"></a-asset-item>
-				<a-asset-item id="tower28" src="model/H29.glb"></a-asset-item>
-				<a-asset-item id="tower29" src="model/Building.glb"></a-asset-item>
+				<a-asset-item id="tower12" src="model/H11-H13.glb"></a-asset-item>
+				<a-asset-item id="tower13" src="model/H13-H14.glb"></a-asset-item>
+				<a-asset-item id="tower14" src="model/H13-H15.glb"></a-asset-item>
+				<a-asset-item id="tower15" src="model/H13-H16.glb"></a-asset-item>
+				<a-asset-item id="tower16" src="model/H16-H17.glb"></a-asset-item>
+				<a-asset-item id="tower17" src="model/H16-H18.glb"></a-asset-item>
+				<a-asset-item id="tower18" src="model/H16-H19.glb"></a-asset-item>
+				<a-asset-item id="tower19" src="model/H19-H20.glb"></a-asset-item>
+				<a-asset-item id="tower20" src="model/H19-H21.glb"></a-asset-item>
+				<a-asset-item id="tower21" src="model/H19-H22.glb"></a-asset-item>
+				<a-asset-item id="tower22" src="model/H22-H23.glb"></a-asset-item>
+				<a-asset-item id="tower23" src="model/H22-H24.glb"></a-asset-item>
+				<a-asset-item id="tower24" src="model/H22-H24H25.glb"></a-asset-item>
+				<a-asset-item id="tower25" src="model/H22-H26.glb"></a-asset-item>
+				<a-asset-item id="tower26" src="model/H26-H27.glb"></a-asset-item>
+				<a-asset-item id="tower27" src="model/H26-H28.glb"></a-asset-item>
+				<a-asset-item id="tower28" src="model/H28-H29.glb"></a-asset-item>
+				<a-asset-item id="tower29" src="model/H29-top.glb"></a-asset-item>
+				<a-asset-item id="tower30" src="model/Building.glb"></a-asset-item>
 			</a-assets>
 
 			<a-camera
@@ -323,6 +327,11 @@
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower29"
 		                      id="tower_29"
+		  	    	      xrextras-one-finger-rotate
+		                      scale="0.005 0.005 0.005">
+			    </a-gltf-model>
+			    <a-gltf-model src="#tower30"
+		                      id="tower_30"
 		  	    	      xrextras-one-finger-rotate
 		                      scale="0.005 0.005 0.005">
 			    </a-gltf-model>
