@@ -17,6 +17,14 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
+			var scene = document.querySelector('#target_Tower');
+			var tower_ = document.createElement('a-gltf-model');
+                        tower_.setAttribute('src', '#tower1');
+                        tower_.setAttribute('id', 'tower_1');
+			tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
+			scale.appendChild(tower_);
+
+
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
@@ -143,186 +151,149 @@
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
 			    <a-gltf-model src="#ground"
 		                      id="ground"
-		  	    	      xrextras-one-finger-rotate
 			scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#mall"
 		                      id="mall"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#mall_h13"
 		                      id="mall_h13"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#h13_top"
 		                      id="h13_top"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower1"
 		                      id="tower_1"
-		  	    	      xrextras-one-finger-rotate
 			scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower2"
 		                      id="tower_2"
-		  	    	      xrextras-one-finger-rotate
 			scale="0.0125 0.0125 0.0125">
 			    <a-gltf-model src="#tower3"
 		                      id="tower_3"
-		  	    	      xrextras-one-finger-rotate
 			scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower4"
 		                      id="tower_4"
-		  	    	      xrextras-one-finger-rotate
 			scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower5"
 		                      id="tower_5"
-		  	    	      xrextras-one-finger-rotate
 			scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower6"
 		                      id="tower_6"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower7"
 		                      id="tower_7"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower8"
 		     			id="tower_8"
-		  	    	      xrextras-one-finger-rotate
 	  scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower9"
 		                      id="tower_9"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower10"
 		                      id="tower_10"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower11"
 		                      id="tower_11"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower12"
 		                      id="tower_12"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower13"
 		                      id="tower_13"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower14"
 		                      id="tower_14"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower15"
 		                      id="tower_15"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower16"
 		                      id="tower_16"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower17"
 		                      id="tower_17"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower18"
 		                      id="tower_18"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower19"
 		                      id="tower_19"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower20"
 		                      id="tower_20"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower21"
 		                      id="tower_21"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower22"
 		                      id="tower_22"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower23"
 		                      id="tower_23"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower24"
 		                      id="tower_24"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower25"
 		                      id="tower_25"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower26"
 		                      id="tower_26"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower27"
 		                      id="tower_27"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower28"
 		                      id="tower_28"
-		  	    	      xrextras-one-finger-rotate
 		     scale="0.0125 0.0125 0.0125"	>
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower29"
 		                      id="tower_29"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower30"
 		                      id="tower_30"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower31"
 		                      id="tower_31"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower32"
 		                      id="tower_32"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			    <a-gltf-model src="#tower33"
 		                      id="tower_33"
-		  	    	      xrextras-one-finger-rotate
 		                      scale="0.0125 0.0125 0.0125">
 			    </a-gltf-model>
 			</a-entity>
