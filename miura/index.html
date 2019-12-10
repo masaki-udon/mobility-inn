@@ -18,12 +18,13 @@
 
 		<script>
 			var scene = document.querySelector('#target_Tower');
-			var tower_ = document.createElement('a-gltf-model');
-                        tower_.setAttribute('src', '#tower1');
-                        tower_.setAttribute('id', 'tower_1');
-			tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
-			scale.appendChild(tower_);
-
+			for(var i = 1; i <= 33; i++) {
+			    var tower_ = document.createElement('a-gltf-model');
+                            tower_.setAttribute('src', '#tower' + String(i));
+                            tower_.setAttribute('id', 'tower_' + String(i));
+			    tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
+			    scale.appendChild(tower_);
+			}
 
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
@@ -31,49 +32,17 @@
 			    },
 			    init: function() {
 				    const showImage = ({detail}) => {
-					    document.querySelector('#mall').setAttribute(  "visible", "false")
-					    document.querySelector('#mall_h13').setAttribute(  "visible", "false")
-					    document.querySelector('#h13_top').setAttribute(  "visible", "false")
+					    document.querySelector('#mall').setAttribute("visible", "false")
+					    document.querySelector('#mall_h13').setAttribute("visible", "false")
+					    document.querySelector('#h13_top').setAttribute("visible", "false")
 					    for(var i = 1; i <= 33; i++) {
-					        document.querySelector('#tower_' + String(i)).setAttribute(  "visible", "false")
+					        document.querySelector('#tower_' + String(i)).setAttribute("visible", "false")
+					        document.querySelector('#tower_' + String(i)).setAttribute("animation", "property: visible; to: true; delay:   " + String(250*i) + ";");
 				            }
 
-					    document.querySelector('#tower_1').setAttribute(  "animation", "property: visible; to: true; delay:   250;")
-					    document.querySelector('#tower_2').setAttribute(  "animation", "property: visible; to: true; delay:   500;")
-					    document.querySelector('#tower_3').setAttribute(  "animation", "property: visible; to: true; delay:   750;")
-					    document.querySelector('#tower_4').setAttribute(  "animation", "property: visible; to: true; delay:  1000;")
-					    document.querySelector('#tower_5').setAttribute(  "animation", "property: visible; to: true; delay:  1250;")
-					    document.querySelector('#mall').setAttribute(     "animation", "property: visible; to: true; delay:  1250;")
-					    document.querySelector('#tower_6').setAttribute(  "animation", "property: visible; to: true; delay:  1500;")
-					    document.querySelector('#tower_7').setAttribute(  "animation", "property: visible; to: true; delay:  1750;")
-					    document.querySelector('#tower_8').setAttribute(  "animation", "property: visible; to: true; delay:  2000;")
-					    document.querySelector('#tower_9').setAttribute(  "animation", "property: visible; to: true; delay:  2250;")
-					    document.querySelector('#tower_10').setAttribute( "animation", "property: visible; to: true; delay:  2500;")
-					    document.querySelector('#tower_11').setAttribute( "animation", "property: visible; to: true; delay:  2750;")
-					    document.querySelector('#tower_12').setAttribute( "animation", "property: visible; to: true; delay:  3000;")
-					    document.querySelector('#tower_13').setAttribute( "animation", "property: visible; to: true; delay:  3250;")
-					    document.querySelector('#tower_14').setAttribute( "animation", "property: visible; to: true; delay:  3500;")
-					    document.querySelector('#tower_15').setAttribute( "animation", "property: visible; to: true; delay:  3750;")
-					    document.querySelector('#tower_16').setAttribute( "animation", "property: visible; to: true; delay:  4000;")
-					    document.querySelector('#mall_h13').setAttribute( "animation", "property: visible; to: true; delay:  4000;")
-					    document.querySelector('#tower_17').setAttribute( "animation", "property: visible; to: true; delay:  4250;")
-					    document.querySelector('#tower_18').setAttribute( "animation", "property: visible; to: true; delay:  4500;")
-					    document.querySelector('#tower_19').setAttribute( "animation", "property: visible; to: true; delay:  4750;")
-					    document.querySelector('#tower_20').setAttribute( "animation", "property: visible; to: true; delay:  5000;")
-					    document.querySelector('#tower_21').setAttribute( "animation", "property: visible; to: true; delay:  5250;")
-					    document.querySelector('#tower_22').setAttribute( "animation", "property: visible; to: true; delay:  5500;")
-					    document.querySelector('#tower_23').setAttribute( "animation", "property: visible; to: true; delay:  5750;")
-					    document.querySelector('#tower_24').setAttribute( "animation", "property: visible; to: true; delay:  6000;")
-					    document.querySelector('#tower_25').setAttribute( "animation", "property: visible; to: true; delay:  6250;")
-					    document.querySelector('#tower_26').setAttribute( "animation", "property: visible; to: true; delay:  6500;")
-					    document.querySelector('#tower_27').setAttribute( "animation", "property: visible; to: true; delay:  6750;")
-					    document.querySelector('#tower_28').setAttribute( "animation", "property: visible; to: true; delay:  7000;")
-					    document.querySelector('#tower_29').setAttribute( "animation", "property: visible; to: true; delay:  7250;")
-					    document.querySelector('#h13_top').setAttribute(  "animation", "property: visible; to: true; delay:  7250;")
-					    document.querySelector('#tower_30').setAttribute( "animation", "property: visible; to: true; delay:  7500;")
-					    document.querySelector('#tower_31').setAttribute( "animation", "property: visible; to: true; delay:  7750;")
-					    document.querySelector('#tower_32').setAttribute( "animation", "property: visible; to: true; delay:  8000;")
-					    document.querySelector('#tower_33').setAttribute( "animation", "property: visible; to: true; delay:  8250;")
+					    document.querySelector('#mall').setAttribute("animation", "property: visible; to: true; delay:  1250;")
+					    document.querySelector('#mall_h13').setAttribute("animation", "property: visible; to: true; delay:  4000;")
+					    document.querySelector('#h13_top').setAttribute("animation", "property: visible; to: true; delay:  7250;")
 				    }
 				    const hideImage = ({detail}) => {
 					    document.querySelector('#mall').removeAttribute("animation")
@@ -149,155 +118,45 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
-			    <a-gltf-model src="#ground"
-		                      id="ground"
-			scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#mall"
-		                      id="mall"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#mall_h13"
-		                      id="mall_h13"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#h13_top"
-		                      id="h13_top"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
+			    <a-gltf-model src="#ground" id="ground" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#mall" id="mall" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#mall_h13" id="mall_h13" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#h13_top" id="h13_top" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <!--
-			    <a-gltf-model src="#tower1"
-		                      id="tower_1"
-			scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
+	                    <a-gltf-model src="#tower1" id="tower_1" scale="0.0125 0.0125 0.0125"> </a-gltf-model>
+			    <a-gltf-model src="#tower2" id="tower_2" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower3" id="tower_3" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower4" id="tower_4" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower5" id="tower_5" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower6" id="tower_6" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower7" id="tower_7" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower8" id="tower_8" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower9" id="tower_9" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower10" id="tower_10" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower11" id="tower_11" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower12" id="tower_12" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower13" id="tower_13" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower14" id="tower_14" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower15" id="tower_15" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower16" id="tower_16" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower17" id="tower_17" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower18" id="tower_18" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower19" id="tower_19" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower20" id="tower_20" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower21" id="tower_21" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower22" id="tower_22" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower23" id="tower_23" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower24" id="tower_24" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower25" id="tower_25" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower26" id="tower_26" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower27" id="tower_27" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower28" id="tower_28" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower29" id="tower_29" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower30" id="tower_30" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower31" id="tower_31" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower32" id="tower_32" scale="0.0125 0.0125 0.0125"></a-gltf-model>
+			    <a-gltf-model src="#tower33" id="tower_33" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    -->
-			    <a-gltf-model src="#tower2"
-		                      id="tower_2"
-			scale="0.0125 0.0125 0.0125">
-			    <a-gltf-model src="#tower3"
-		                      id="tower_3"
-			scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower4"
-		                      id="tower_4"
-			scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower5"
-		                      id="tower_5"
-			scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower6"
-		                      id="tower_6"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower7"
-		                      id="tower_7"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower8"
-		     			id="tower_8"
-	  scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower9"
-		                      id="tower_9"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower10"
-		                      id="tower_10"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower11"
-		                      id="tower_11"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower12"
-		                      id="tower_12"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower13"
-		                      id="tower_13"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower14"
-		                      id="tower_14"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower15"
-		                      id="tower_15"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower16"
-		                      id="tower_16"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower17"
-		                      id="tower_17"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower18"
-		                      id="tower_18"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower19"
-		                      id="tower_19"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower20"
-		                      id="tower_20"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower21"
-		                      id="tower_21"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower22"
-		                      id="tower_22"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower23"
-		                      id="tower_23"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower24"
-		                      id="tower_24"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower25"
-		                      id="tower_25"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower26"
-		                      id="tower_26"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower27"
-		                      id="tower_27"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower28"
-		                      id="tower_28"
-		     scale="0.0125 0.0125 0.0125"	>
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower29"
-		                      id="tower_29"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower30"
-		                      id="tower_30"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower31"
-		                      id="tower_31"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower32"
-		                      id="tower_32"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
-			    <a-gltf-model src="#tower33"
-		                      id="tower_33"
-		                      scale="0.0125 0.0125 0.0125">
-			    </a-gltf-model>
 			</a-entity>
 		</a-scene>
 	</body>
