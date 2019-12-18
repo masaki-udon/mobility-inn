@@ -37,9 +37,10 @@
 		        			// Show the flash while the image is being taken
 		        			// container.classList.add('flash');
 
-						var link = this.getAttribute('data-link');
-						location.href = link;
 		        			container.classList.remove('flash');
+						//var link = this.getAttribute('data-link');
+						link = "https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo";
+						location.href = link;
 		        			container.classList.add('photo');
 		        		})
 
@@ -110,7 +111,7 @@
 					    */
 					    for(var i = 1; i <= 5; i++) {
 					        document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
-					        document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 250;");
+					        document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: " + String(250*i) + ";");
 					    }
 
 					    document.querySelector('#mall').setAttribute("animation", "property: visible; to: true; delay:  1250;")
@@ -168,7 +169,7 @@
 		<div id="photoModeContainer" style="display: none">
 			<img id="photoModeImage">
 			<div id="flash"></div>
-			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" class="twitter-share-button" style="">Tweet</div>
+			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" class="twitter-share-button" style="">T</div>
 			<div id="closeButton" style=""></div>
 		</div>
 		<div id="tweetContainer" style="display: none">
