@@ -17,16 +17,6 @@
 		<script async src="//apps.8thwall.com/xrweb?appKey=bnWBr8smMOtm8hsLzv1M3AsjyZEPcHize0Tqflu9nYQxqu0yf0fp8mul8iPtRtqb0oR3LW"></script>
 
 		<script>
-			/*
-			var scene = document.querySelector('#target_Tower');
-			for(var i = 2; i <= 33; i++) {
-			    var tower_ = document.createElement('a-gltf-model');
-                            tower_.setAttribute('src', '#tower' + String(i));
-                            tower_.setAttribute('id', 'tower_' + String(i));
-			    tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
-			    scale.appendChild(tower_);
-			}
-			*/
                         AFRAME.registerComponent('twitter', {
 			    init: function() {
 				const container = document.getElementById('tweet-button');
@@ -40,6 +30,7 @@
 			    },
 			    init: function() {
 		                    var scene = document.querySelector('#target_Tower');
+				    /*
 		                    for(var i = 2; i <= 33; i++) {
 		                        var tower_ = document.createElement('a-gltf-model');
                                         tower_.setAttribute('src', '#tower' + String(i));
@@ -47,6 +38,7 @@
 		                        tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
 		                        scale.appendChild(tower_);
 		                    }
+				    */
                                     var cylinder = document.createElement('a-cylinder');
                                     cylinder.setAttribute('color', '#FF9500');
                                     cylinder.setAttribute(', '2');
@@ -159,13 +151,12 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
-			    <a-sky src="backimage" id="backimage"></a-sky>
+			    <a-sky src="#backimage" id="backimage"></a-sky>
 			    <a-gltf-model src="#ground" id="ground" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#mall" id="mall" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#mall_h13" id="mall_h13" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#h13_top" id="h13_top" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 	                    <a-gltf-model src="#tower1" id="tower_1" scale="0.0125 0.0125 0.0125"> </a-gltf-model>
-			    <!--
 			    <a-gltf-model src="#tower2" id="tower_2" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#tower3" id="tower_3" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#tower4" id="tower_4" scale="0.0125 0.0125 0.0125"></a-gltf-model>
@@ -198,7 +189,6 @@
 			    <a-gltf-model src="#tower31" id="tower_31" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#tower32" id="tower_32" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#tower33" id="tower_33" scale="0.0125 0.0125 0.0125"></a-gltf-model>
-			    -->
 			</a-entity>
 		</a-scene>
 	</body>
