@@ -32,10 +32,15 @@
 
 		        		shutterButton.addEventListener('click', () => {
 		        			// Emit a screenshotrequest to the xrweb component
-		        			this.el.sceneEl.emit('screenshotrequest');
+		        			// this.el.sceneEl.emit('screenshotrequest');
 
 		        			// Show the flash while the image is being taken
-		        			container.classList.add('flash');
+		        			// container.classList.add('flash');
+
+						var link = this.getAttribute('data-link');
+						location.href = link;
+		        			container.classList.remove('flash');
+		        			container.classList.add('photo');
 		        		})
 
 		        		this.el.sceneEl.addEventListener('screenshotready', e => {
@@ -103,21 +108,10 @@
 					        document.querySelector('#tower_' + String(i)).setAttribute("animation", "property: visible; to: true; delay:   " + String(250*i) + ";");
 				            }
 					    */
-				            var i = 1;
-					    document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
-					    document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 250;");
-					    i++;
-					    document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
-					    document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 500;");
-					    i++;
-					    document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
-					    document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 750;");
-					    i++;
-					    document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
-					    document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 1000;");
-					    i++;
-					    document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
-					    document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 1250;");
+					    for(var i = 1; i <= 5; i++) {
+					        document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
+					        document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: 250;");
+					    }
 
 					    document.querySelector('#mall').setAttribute("animation", "property: visible; to: true; delay:  1250;")
 					    document.querySelector('#mall_h13').setAttribute("animation", "property: visible; to: true; delay:  4000;")
@@ -128,16 +122,9 @@
 					    document.querySelector('#mall_h13').removeAttribute("animation")
 					    document.querySelector('#h13_top').removeAttribute("animation")
 
-					    var i = 1;
-					    document.querySelector('#tower_'+String(i)).removeAttribute("animation")
-					    i++;
-					    document.querySelector('#tower_'+String(i)).removeAttribute("animation")
-					    i++;
-					    document.querySelector('#tower_'+String(i)).removeAttribute("animation")
-					    i++;
-					    document.querySelector('#tower_'+String(i)).removeAttribute("animation")
-					    i++;
-					    document.querySelector('#tower_'+String(i)).removeAttribute("animation")
+					    for(var i = 1; i <= 5; i++) {
+					        document.querySelector('#tower_'+String(i)).removeAttribute("animation")
+				            }
 					    /*
 					    for(var i = 1; i <= 33; i++) {
 					        document.querySelector('#tower_' + String(i)).removeAttribute("animation")
@@ -181,7 +168,7 @@
 		<div id="photoModeContainer" style="display: none">
 			<img id="photoModeImage">
 			<div id="flash"></div>
-			<div id="shutterButton" style=""></div>
+			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" class="twitter-share-button" style="">Tweet</div>
 			<div id="closeButton" style=""></div>
 		</div>
 		<div id="tweetContainer" style="display: none">
