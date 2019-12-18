@@ -39,7 +39,7 @@
 
 		        			container.classList.remove('flash');
 						//var link = this.getAttribute('data-link');
-						link = "https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo";
+						link = "https://twitter.com/intent/tweet?text=あなたの東京タワーにまつわる思い出を投稿しよう！&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo";
 						location.href = link;
 		        			container.classList.add('photo');
 		        		})
@@ -103,17 +103,10 @@
 					    document.querySelector('#mall').setAttribute("visible", "false");
 					    document.querySelector('#mall_h13').setAttribute("visible", "false");
 					    document.querySelector('#h13_top').setAttribute("visible", "false");
-					    /*
 					    for(var i = 1; i <= 33; i++) {
-					        document.querySelector('#tower_' + String(i)).setAttribute("visible", "false");
-					        document.querySelector('#tower_' + String(i)).setAttribute("animation", "property: visible; to: true; delay:   " + String(250*i) + ";");
-				            }
-					    */
-					    for(var i = 1; i <= 5; i++) {
 					        document.querySelector('#tower_'+String(i)).setAttribute("visible", "false");
 					        document.querySelector('#tower_'+String(i)).setAttribute("animation", "property: visible; to: true; delay: " + String(250*i) + ";");
 					    }
-
 					    document.querySelector('#mall').setAttribute("animation", "property: visible; to: true; delay:  1250;")
 					    document.querySelector('#mall_h13').setAttribute("animation", "property: visible; to: true; delay:  4000;")
 					    document.querySelector('#h13_top').setAttribute("animation", "property: visible; to: true; delay:  7250;")
@@ -122,15 +115,9 @@
 					    document.querySelector('#mall').removeAttribute("animation")
 					    document.querySelector('#mall_h13').removeAttribute("animation")
 					    document.querySelector('#h13_top').removeAttribute("animation")
-
-					    for(var i = 1; i <= 5; i++) {
+					    for(var i = 1; i <= 33; i++) {
 					        document.querySelector('#tower_'+String(i)).removeAttribute("animation")
 				            }
-					    /*
-					    for(var i = 1; i <= 33; i++) {
-					        document.querySelector('#tower_' + String(i)).removeAttribute("animation")
-				            }
-					    */
 				    }
 				    this.el.sceneEl.addEventListener('xrimagefound', showImage)
 				    this.el.sceneEl.addEventListener('xrimagelost', hideImage)
@@ -169,7 +156,7 @@
 		<div id="photoModeContainer" style="display: none">
 			<img id="photoModeImage">
 			<div id="flash"></div>
-			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" class="twitter-share-button" style="">T</div>
+			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" class="twitter-share-button" style=""></div>
 			<div id="closeButton" style=""></div>
 		</div>
 		<div id="tweetContainer" style="display: none">
