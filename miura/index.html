@@ -37,7 +37,6 @@
 		        			// Show the flash while the image is being taken
 		        			// container.classList.add('flash');
 
-		        			container.classList.remove('flash');
 						//var link = this.getAttribute('data-link');
 						link = "https://twitter.com/intent/tweet?text=あなたの東京タワーにまつわる思い出を投稿しよう！&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo";
 						location.href = link;
@@ -45,20 +44,14 @@
 		        		})
 		        	}
 		        })
-                        AFRAME.registerComponent('twitter', {
-			    init: function() {
-				const container = document.getElementById('tweetContainer');
-				container.style.display = 'block';
-			    }
-                        });
 
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
 			    },
 			    init: function() {
-		                    var scene = document.querySelector('#target_Tower');
-		                    //var scene = document.querySelector('a-scene');
+		                    //var scene = document.querySelector('#target_Tower');
+		                    var scene = document.querySelector('a-scene');
 				    
                                     var cylinder = document.createElement('a-cylinder');
                                     cylinder.setAttribute('color', '#FF9500');
@@ -108,7 +101,7 @@
 		<div id="photoModeContainer" style="display: none">
 			<img id="photoModeImage">
 			<div id="flash"></div>
-			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" class="twitter-share-button" style=""></div>
+			<div id="shutterButton" data-link="https://twitter.com/intent/tweet?text=Hello%20world&url=https%3A%2F%2Fdeep4drive-develop.github.io%2Fmobility-inn%2F&hashtags=demo" style=""></div>
 			<div id="closeButton" style=""></div>
 		</div>
 		<a-scene
@@ -116,7 +109,6 @@
 		      xrextras-almost-there
 		      xrextras-runtime-error
 		      xrextras-loading
-		      twitter
 		      photo-mode>
 			<a-assets>
 				<a-asset-item id="ground" src="model/ground.glb"></a-asset-item>
@@ -173,7 +165,7 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
-			    <a-sky src="#backimage" id="backimage"></a-sky>
+			    <a-sky src="#backimage" id="backimage" phi-length=180 phi-start=0></a-sky>
 			    <a-gltf-model src="#ground" id="ground" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#mall" id="mall" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#mall_h13" id="mall_h13" scale="0.0125 0.0125 0.0125"></a-gltf-model>
