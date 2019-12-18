@@ -27,13 +27,32 @@
 			    scale.appendChild(tower_);
 			}
 			*/
+                        AFRAME.registerComponent('twitter', {
+			    init: function() {
+				const container = document.getElementById('tweet-button');
+				container.style.display = 'block';
+			    }
+                        });
 
-			/*
 			AFRAME.registerComponent('target-tower', {
 			    schema: {
 			        name: { type: 'string' }
 			    },
 			    init: function() {
+		                    var scene = document.querySelector('#target_Tower');
+		                    for(var i = 2; i <= 33; i++) {
+		                        var tower_ = document.createElement('a-gltf-model');
+                                        tower_.setAttribute('src', '#tower' + String(i));
+                                        tower_.setAttribute('id', 'tower_' + String(i));
+		                        tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
+		                        scale.appendChild(tower_);
+		                    }
+                                    var cylinder = document.createElement('a-cylinder');
+                                    cylinder.setAttribute('color', '#FF9500');
+                                    cylinder.setAttribute(', '2');
+                                    cylinder.setAttribute('radius', '0.75');
+                                    cylinder.setAttribute('p, '3 1 0');
+                                    scene.apld(cylinder);
 				    const showImage = ({detail}) => {
 					    document.querySelector('#mall').setAttribute("visible", "false")
 					    document.querySelector('#mall_h13').setAttribute("visible", "false")
@@ -62,16 +81,9 @@
 			})
 			*/
 		</script>
-	<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-		<div id="photoModeContainer" style="display: none">
-			<img id="photoModeImage">
-			<div id="flash"></div>
-			<div id="shutterButton" style=""></div>
-			<div id="closeButton" style=""></div>
-		</div>
-		<div>
+		<div id="tweet-button" style="display: none">
 		    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
 		    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
@@ -79,7 +91,8 @@
 		      xrweb="disableWorldTracking: true"
 		      xrextras-almost-there
 		      xrextras-runtime-error
-		      xrextras-loading >
+		      xrextras-loading
+		      twitter>
 			<a-assets>
 				<a-asset-item id="ground" src="model/ground.glb"></a-asset-item>
 				<a-asset-item id="mall" src="model/mall.glb"></a-asset-item>
@@ -174,22 +187,5 @@
 			    -->
 			</a-entity>
 		</a-scene>
-	<script>
-		//var scene = document.querySelector('#target_Tower');
-		var scene = document.querySelector('a-scene');
-		for(var i = 2; i <= 33; i++) {
-		    var tower_ = document.createElement('a-gltf-model');
-                    tower_.setAttribute('src', '#tower' + String(i));
-                    tower_.setAttribute('id', 'tower_' + String(i));
-		    tower_.setAttribute('scale', '0.0125 0.0125 0.0125');
-		    scale.appendChild(tower_);
-		}
-                var cylinder = document.createElement('a-cylinder');
-                cylinder.setAttribute('color', '#FF9500');
-                cylinder.setAttribute(', '2');
-                cylinder.setAttribute('radius', '0.75');
-                cylinder.setAttribute('p, '3 1 0');
-                scene.apld(cylinder);
-	</script>
 	</body>
 </html>
