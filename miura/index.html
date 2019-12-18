@@ -47,11 +47,11 @@
                                     scene.apld(cylinder);
 
 				    const showImage = ({detail}) => {
-					    document.querySelector('#mall').setAttribute("visible", "false")
-					    document.querySelector('#mall_h13').setAttribute("visible", "false")
-					    document.querySelector('#h13_top').setAttribute("visible", "false")
+					    document.querySelector('#mall').setAttribute("visible", "false");
+					    document.querySelector('#mall_h13').setAttribute("visible", "false");
+					    document.querySelector('#h13_top').setAttribute("visible", "false");
 					    for(var i = 1; i <= 33; i++) {
-					        document.querySelector('#tower_' + String(i)).setAttribute("visible", "false")
+					        document.querySelector('#tower_' + String(i)).setAttribute("visible", "false");
 					        document.querySelector('#tower_' + String(i)).setAttribute("animation", "property: visible; to: true; delay:   " + String(250*i) + ";");
 				            }
 
@@ -72,7 +72,6 @@
 				    this.el.sceneEl.addEventListener('xrimagescanning', hideImage)
 			    }
 			})
-			*/
 		</script>
                 <style>
                 #twitter-button {
