@@ -62,8 +62,19 @@
 			})
 			*/
 		</script>
+	<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
+		<div id="photoModeContainer" style="display: none">
+			<img id="photoModeImage">
+			<div id="flash"></div>
+			<div id="shutterButton" style=""></div>
+			<div id="closeButton" style=""></div>
+		</div>
+		<div>
+		    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+		    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
 		<a-scene
 		      xrweb="disableWorldTracking: true"
 		      xrextras-almost-there
@@ -163,7 +174,6 @@
 			    -->
 			</a-entity>
 		</a-scene>
-		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script>
 		//var scene = document.querySelector('#target_Tower');
 		var scene = document.querySelector('a-scene');
