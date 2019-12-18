@@ -19,7 +19,7 @@
 		<script>
                         AFRAME.registerComponent('twitter', {
 			    init: function() {
-				const container = document.getElementById('tweet-button');
+				const container = document.getElementById('tweetContainer');
 				container.style.display = 'block';
 			    }
                         });
@@ -29,7 +29,8 @@
 			        name: { type: 'string' }
 			    },
 			    init: function() {
-		                    var scene = document.querySelector('#target_Tower');
+		                    //var scene = document.querySelector('#target_Tower');
+		                    var scene = document.querySelector('a-scene');
 				    /*
 		                    for(var i = 2; i <= 33; i++) {
 		                        var tower_ = document.createElement('a-gltf-model');
@@ -44,7 +45,7 @@
                                     cylinder.setAttribute('height', '2');
                                     cylinder.setAttribute('radius', '0.75');
                                     cylinder.setAttribute('position', '3 1 0');
-                                    scene.apld(cylinder);
+                                    scene.appendChild(cylinder);
 
 				    const showImage = ({detail}) => {
 					    document.querySelector('#mall').setAttribute("visible", "false");
@@ -74,7 +75,7 @@
 			})
 		</script>
                 <style>
-                #twitter-button {
+                #tweetContainer {
                 	position: absolute;
                 	left: 0;
                 	top: 0;
@@ -82,13 +83,26 @@
                 	right: 0;
                 	z-index: 10;
                 	pointer-events: none;
-	                background-color: white;
+                }
+                #tweetButton {
+                	position: absolute;
+                	width: 15vmin;
+                	height: 15vmin;
+                	background-color: white;
+                	bottom: 2vmax;
+                	border-radius: 7.5vmin;
+                	left: 50%;
+                	transform: translateX(-50%);
+                	background-size: 50%;
+                	background-repeat: no-repeat;
+                	background-position: center center;
+                	pointer-events: auto;
                 }
                 </style>
 	</head>
 	<body>
-		<div id="tweet-button" style="display: none">
-		    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+		<div id="tweetContainer" style="display: none">
+		    <a id="tweetButton" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
 		    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 		<a-scene
@@ -136,7 +150,7 @@
 				<a-asset-item id="tower32" src="model/32.glb"></a-asset-item>
 				<a-asset-item id="tower33" src="model/33.glb"></a-asset-item>
 				<!-- Credit to Tom Lechner by flickr: https://www.flickr.com/photos/tomlechner/9337477855/ -->
-				<img id="backimage" src="image/9337477855_0e3fb2f77e_o.jpg"></a-asset-item>
+				<img id="backimage" src="image/9337477855_0e3fb2f77e_o.jpg"></img>
 			</a-assets>
 
 			<a-camera
