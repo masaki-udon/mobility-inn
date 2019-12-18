@@ -81,6 +81,17 @@
 			})
 			*/
 		</script>
+                <style>
+                #twitter-button {
+                	position: absolute;
+                	left: 0;
+                	top: 0;
+                	bottom: 0;
+                	right: 0;
+                	z-index: 10;
+                	pointer-events: none;
+                }
+                </style>
 	</head>
 	<body>
 		<div id="tweet-button" style="display: none">
@@ -131,6 +142,8 @@
 				<a-asset-item id="tower31" src="model/31.glb"></a-asset-item>
 				<a-asset-item id="tower32" src="model/32.glb"></a-asset-item>
 				<a-asset-item id="tower33" src="model/33.glb"></a-asset-item>
+				<!-- Credit to Tom Lechner by flickr: https://www.flickr.com/photos/tomlechner/9337477855/ -->
+				<a-asset-item id="backimage" src="image/9337477855_0e3fb2f77e_o.jpg"></a-asset-item>
 			</a-assets>
 
 			<a-camera
@@ -146,6 +159,7 @@
       			<a-light type="ambient" intensity="1"></a-light>
 
       			<a-entity target-tower xrextras-named-image-target="name: targetTower" id="target_Tower">
+			    <a-sky src="backimage" id="backimage"></a-sky>
 			    <a-gltf-model src="#ground" id="ground" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#mall" id="mall" scale="0.0125 0.0125 0.0125"></a-gltf-model>
 			    <a-gltf-model src="#mall_h13" id="mall_h13" scale="0.0125 0.0125 0.0125"></a-gltf-model>
